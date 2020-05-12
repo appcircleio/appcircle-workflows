@@ -10,7 +10,7 @@ steps:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
-- componentType: appcircle_git
+- componentType: appcircle_git_clone
   stepName: Git Clone
   inputs:
   - AC_GIT_URL: "$AC_REPOSITORY_URL"
