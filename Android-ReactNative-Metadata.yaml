@@ -1,0 +1,28 @@
+﻿---
+directories:
+- AC_SOURCE
+- AC_OUTPUT_DIR
+steps:
+- componentType: appcircle_activate_ssh_key
+  componentVersion: "1.0.0"
+  stepName: Activate SSH Private Key
+  enabled: true
+  inputs:
+  - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
+  outputs:
+  - SSH_AUTH_SOCK: SSH_AUTH_SOCK
+- componentType: appcircle_git
+  stepName: Git
+  inputs:
+  - AC_GIT_URL: "$AC_REPOSITORY_URL"
+  - AC_GIT_LFS: "false"
+  - AC_GIT_BRANCH: "$AC_BRANCH_NAME"
+  - AC_GIT_COMMIT: "$AC_COMMIT_HASH"
+  outputs:
+  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+- componentType: appcircle_metadata_android
+  stepName: Metadata
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  outputs:
+  - AC_METADATA_OUTPUT_PATH: AC_OUTPUT_DIR

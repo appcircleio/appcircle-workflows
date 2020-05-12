@@ -1,0 +1,87 @@
+---
+directories:
+- AC_SOURCE
+- AC_OUTPUT_DIR
+steps:
+- componentType: appcircle_activate_ssh_key
+  componentVersion: "1.0.0"
+  stepName: Activate SSH Private Key
+  enabled: true
+  inputs:
+  - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
+  outputs:
+  - SSH_AUTH_SOCK: SSH_AUTH_SOCK
+- componentType: appcircle_git
+  componentVersion: "1.0.0"
+  stepName: Git Clone
+  enabled: true
+  inputs:
+  - AC_GIT_URL: "$AC_REPOSITORY_URL"
+  - AC_GIT_LFS: "false"
+  - AC_GIT_BRANCH: "$AC_BRANCH_NAME"
+  - AC_GIT_COMMIT: "$AC_COMMIT_HASH"
+  outputs:
+  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+- componentType: appcircle_custom_script
+  componentVersion: "1.0.0"
+  stepName: Custom Script
+  enabled: true
+  inputs:
+  - Execute: "ruby"
+  - Script: |
+      puts "___ Hello world! ___"
+- componentType: appcircle_smartface_ios
+  componentVersion: "1.0.0"
+  stepName: Smartface iOS Generator
+  enabled: true
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_SMARTFACE_CLI_VERSION: ""
+  - AC_SMARTFACE_PLAYER_VERSION: ""
+  - AC_INCLUDE_XCODE_PROJECT: "false"
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  outputs:
+  - AC_PROJECT_PATH: AC_PROJECT_PATH
+  - AC_SCHEME: AC_SCHEME
+  - AC_XCODE_VERSION: AC_XCODE_VERSION
+  - AC_BUNDLE_IDENTIFIERS: AC_BUNDLE_IDENTIFIERS
+- componentType: appcircle_xcode_select
+  componentVersion: "1.0.0"
+  stepName: "Xcode Select"
+  enabled: true
+  inputs:
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
+- componentType: appcircle_build_sign_ios
+  componentVersion: "1.0.1"
+  stepName: "Xcode Archive & Export"
+  enabled: true
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
+  - AC_CERTIFICATES: $AC_CERTIFICATES
+  - AC_BUNDLE_IDENTIFIERS: $AC_BUNDLE_IDENTIFIERS
+  - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_METHOD_FOR_EXPORT: "auto-detect"
+  - AC_COMPILE_BITCODE_FOR_EXPORT: "NO"
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  outputs:
+  - AC_EXPORT_DIR: AC_EXPORT_DIR
+  - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
+  - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
+- componentType: appcircle_build_simulator
+  componentVersion: "1.0.1"
+  stepName: Xcodebuild for iOS Simulator
+  enabled: true
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  outputs:
+  - AC_SIMULATOR_ARCHIVE_PATH: AC_SIMULATOR_ARCHIVE_PATH
