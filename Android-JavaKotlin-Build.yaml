@@ -34,7 +34,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-custom-script
   repoUrl: https://github.com/appcircleio/appcircle-custom-script.git
-  commit: 08e87ce
+  commit: 10a76fd
   inputs:
   - Execute: "ruby"
   - Script: |
