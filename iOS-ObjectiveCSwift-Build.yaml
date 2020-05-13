@@ -30,7 +30,7 @@ steps:
       puts "___ Hello world! ___"
 - componentType: appcircle_xcode_select
   componentVersion: "1.0.0"
-  stepName: "Xcode Select"
+  stepName: Xcode Select
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
   repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
@@ -44,7 +44,7 @@ steps:
   commit: b512a831f79687aa6cf5ce44ff3a428314c8a3c7
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.0"
-  stepName: "Xcode Archive & Export"
+  stepName: Xcodebuild for Devices
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
