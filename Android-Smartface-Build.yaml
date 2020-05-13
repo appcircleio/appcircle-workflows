@@ -7,6 +7,9 @@ steps:
   componentVersion: "1.0.0"
   stepName: Activate SSH Private Key
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
+  repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
+  commit: 6f3b7dd
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
@@ -15,10 +18,14 @@ steps:
   componentVersion: "1.0.0"
   stepName: Git Clone
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-git-clone-component
+  repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
+  commit: 4dec666
   inputs:
-  - AC_GIT_URL: "$AC_REPOSITORY_URL"
+  - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_BRANCH_NAME"
+  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
+  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
   - AC_GIT_COMMIT: "$AC_COMMIT_HASH"
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
@@ -26,14 +33,20 @@ steps:
   componentVersion: "1.0.0"
   stepName: Custom Script
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-custom-script
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script.git
+  commit: 10a76fd
   inputs:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
-- componentType: appcircle_smartface_android
+- componentType: appcircle_android_smartface_eject
   componentVersion: "1.0.0"
-  stepName: Smartface Generator
+  stepName: Smartface Eject for Android
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component
+  repoUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component.git
+  commit: 3530037
   inputs:
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
   - AC_SMARTFACE_CLI_VERSION: ""
@@ -46,6 +59,9 @@ steps:
   componentVersion: "1.0.0"
   stepName: Android Build
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-android-build-component
+  repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
+  commit: e497f5c
   inputs:
   - AC_MODULE: $AC_MODULE
   - AC_VARIANTS: $AC_VARIANTS 
@@ -59,6 +75,9 @@ steps:
   componentVersion: "1.0.0"
   stepName: Android Sign
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-android-sign-component
+  repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
+  commit: b531e8c
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
@@ -69,9 +88,12 @@ steps:
   outputs:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
-- componentType: appcircle_app_analyzer_android
+- componentType: appcircle_android_post_process
   componentVersion: "1.0.0"
-  stepName: Android App Analyzer
+  stepName: Android Post Process
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
+  repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
+  commit: 63fd9a5
   outputs:
   - AC_ANDROID_APP_ANALYSIS_PATH: AC_ANDROID_APP_ANALYSIS_PATH
