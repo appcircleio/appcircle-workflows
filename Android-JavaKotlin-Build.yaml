@@ -33,7 +33,7 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
-- componentType: appcircle_build_android
+- componentType: appcircle_android_build
   componentVersion: "1.0.0"
   stepName: Android Build
   enabled: true
@@ -46,7 +46,7 @@ steps:
   outputs:
   - AC_APK_PATH: AC_APK_PATH
   - AC_AAB_PATH: AC_AAB_PATH
-- componentType: appcircle_sign_android
+- componentType: appcircle_android_sign
   componentVersion: "1.0.0"
   stepName: Android Sign
   enabled: true
