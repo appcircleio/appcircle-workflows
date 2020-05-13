@@ -22,10 +22,10 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
   commit: 4dec666
   inputs:
-  - AC_GIT_URL: "$AC_REPOSITORY_URL"
+  - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_BRANCH_NAME"
-  - AC_GIT_COMMIT: "$AC_COMMIT_HASH"
+  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
+  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
   outputs:
   - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_custom_script
