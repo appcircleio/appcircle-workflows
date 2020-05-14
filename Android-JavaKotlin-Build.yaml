@@ -78,6 +78,6 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: 63fd9a5
+  commit: 6b90add
   outputs:
-  - AC_ANDROID_APP_ANALYSIS_PATH: AC_ANDROID_APP_ANALYSIS_PATH
+  - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
