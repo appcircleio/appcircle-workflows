@@ -39,10 +39,13 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
-- componentType: appcircle_smartface_ios
+- componentType: appcircle_ios_smartface_eject
   componentVersion: "1.0.0"
-  stepName: Smartface iOS Generator
+  stepName: Smartface Eject for iOS
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component.git
+  commit: cc56264d150571915222d1dda28dd81c0573570c
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SMARTFACE_CLI_VERSION: ""
