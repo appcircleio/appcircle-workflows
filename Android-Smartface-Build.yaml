@@ -9,7 +9,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 6f3b7dd
+  commit: 3ae3238
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
@@ -20,7 +20,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 4dec666
+  commit: 026c0dd
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -33,9 +33,9 @@ steps:
   componentVersion: "1.0.0"
   stepName: Custom Script
   enabled: true
-  webUrl: https://github.com/appcircleio/appcircle-custom-script
-  repoUrl: https://github.com/appcircleio/appcircle-custom-script.git
-  commit: 10a76fd
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  commit: cbea20f
   inputs:
   - Execute: "ruby"
   - Script: |
@@ -46,7 +46,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component
   repoUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component.git
-  commit: 3530037
+  commit: 714a29f
   inputs:
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
   - AC_SMARTFACE_CLI_VERSION: ""
@@ -61,7 +61,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
-  commit: e497f5c
+  commit: fcb66f7
   inputs:
   - AC_MODULE: $AC_MODULE
   - AC_VARIANTS: $AC_VARIANTS 
@@ -77,7 +77,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: b531e8c
+  commit: f2b6005
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
