@@ -7,6 +7,9 @@ steps:
   componentVersion: "1.0.0"
   stepName: Activate SSH Private Key
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
+  repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
+  commit: 6f3b7dd
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
@@ -15,17 +18,23 @@ steps:
   componentVersion: "1.0.0"
   stepName: Git Clone
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-git-clone-component
+  repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
+  commit: 4dec6665562412feb3114133487063c50eed10a0
   inputs:
-  - AC_GIT_URL: "$AC_REPOSITORY_URL"
+  - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_BRANCH_NAME"
-  - AC_GIT_COMMIT: "$AC_COMMIT_HASH"
+  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
+  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_custom_script
   componentVersion: "1.0.0"
   stepName: Custom Script
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
   inputs:
   - Execute: "ruby"
   - Script: |
@@ -47,15 +56,21 @@ steps:
   - AC_BUNDLE_IDENTIFIERS: AC_BUNDLE_IDENTIFIERS
 - componentType: appcircle_xcode_select
   componentVersion: "1.0.0"
-  stepName: "Xcode Select"
+  stepName: Xcode Select
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
+  repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
+  commit: 15b862d7252290704e2cb7f84b976d8f2a93003e
   inputs:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
-- componentType: appcircle_build_sign_ios
-  componentVersion: "1.0.1"
-  stepName: "Xcode Archive & Export"
+- componentType: appcircle_ios_build_sign
+  componentVersion: "1.0.0"
+  stepName: Xcodebuild for Devices
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
+  commit: d60d7eee3055f0b10c0b3e3b937400f6b2482c3b
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
@@ -72,10 +87,13 @@ steps:
   - AC_EXPORT_DIR: AC_EXPORT_DIR
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
   - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
-- componentType: appcircle_build_simulator
-  componentVersion: "1.0.1"
+- componentType: appcircle_ios_build_simulator
+  componentVersion: "1.0.0"
   stepName: Xcodebuild for iOS Simulator
   enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
+  commit: 7c9b9422e5094d058312446751a209193c8bfcd6
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
