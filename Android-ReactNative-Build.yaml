@@ -39,7 +39,7 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
-- componentType: appcircle_install_node_version
+- componentType: appcircle_node_install
   componentVersion: "1.0.0"
   stepName: Install Node
   enabled: true
@@ -48,7 +48,7 @@ steps:
   commit: 0f29428
   inputs:
   - AC_SELECTED_NODE_VERSION: latest
-- componentType: appcircle_npm_yarn_command
+- componentType: appcircle_npm_yarn
   componentVersion: "1.0.0"
   stepName: NPM/YARN Command
   enabled: true
