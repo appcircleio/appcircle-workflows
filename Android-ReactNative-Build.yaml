@@ -57,7 +57,6 @@ steps:
   commit: 0b88223
   inputs:
   - AC_WORKING_DIR: $AC_REPOSITORY_DIR
-  - AC_NPM_COMMAND: 
 - componentType: appcircle_android_build
   componentVersion: "1.0.0"
   stepName: Android Build
