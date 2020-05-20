@@ -9,7 +9,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 6f3b7dd
+  commit: e4a949344d97b20977392f2a9e5fb6a91eae613c
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
@@ -20,7 +20,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 4dec6665562412feb3114133487063c50eed10a0
+  commit: 578c6b8d18ad210be6dbf93d1013517880c92d42
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -45,7 +45,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
   repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
-  commit: 15b862d7252290704e2cb7f84b976d8f2a93003e
+  commit: 35dc8c690906b8c9e576c1071d473f86a77b9093
   inputs:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
@@ -55,9 +55,9 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
   repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
-  commit: b512a831f79687aa6cf5ce44ff3a428314c8a3c7
+  commit: e3d1fd1723870c033eabe296d4936fe9e7ef9919
   inputs:
-  - AC_PROJECT_PATH: "$AC_PROJECT"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.0"
@@ -65,12 +65,12 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: d60d7eee3055f0b10c0b3e3b937400f6b2482c3b
+  commit: 059c2a01002078f4da9767badd8ceb821839f991
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
   - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
-  - AC_PROJECT_PATH: "$AC_PROJECT"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
   - AC_CERTIFICATES: $AC_CERTIFICATES
   - AC_BUNDLE_IDENTIFIERS: $AC_BUNDLE_IDENTIFIERS
@@ -89,12 +89,12 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
-  commit: 7c9b9422e5094d058312446751a209193c8bfcd6
+  commit: 358c4a82c296e8711e29391a0e535740f249b63e
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
   - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
-  - AC_PROJECT_PATH: "$AC_PROJECT"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
   - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
