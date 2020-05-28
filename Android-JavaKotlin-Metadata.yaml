@@ -18,7 +18,7 @@ steps:
   stepName: Git
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 026c0dd
+  commit: 6b82254
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
