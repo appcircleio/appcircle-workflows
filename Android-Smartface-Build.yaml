@@ -61,7 +61,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
-  commit: 91624df
+  commit: f8b96f6
   inputs:
   - AC_MODULE: $AC_MODULE
   - AC_VARIANTS: $AC_VARIANTS 
