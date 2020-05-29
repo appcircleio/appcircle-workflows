@@ -65,7 +65,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: fc252687a1e10a3ed3e10690d937772d2c7b3361
+  commit: a1279105cd374b4d66bdbf03d3eafba7d74b6642
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
