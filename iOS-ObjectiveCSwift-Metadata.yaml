@@ -4,7 +4,7 @@ directories:
 - AC_OUTPUT_DIR
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Activate SSH Private Key
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
@@ -15,7 +15,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Git Clone
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component

@@ -4,7 +4,7 @@ directories:
 - AC_OUTPUT_DIR
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Activate SSH Private Key
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
@@ -15,7 +15,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Git Clone
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
@@ -29,7 +29,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_custom_script
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Custom Script
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-custom-script-component
@@ -40,7 +40,7 @@ steps:
   - Script: |
       puts "___ Hello world! ___"
 - componentType: appcircle_xcode_select
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Xcode Select
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
@@ -50,7 +50,7 @@ steps:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
 - componentType: appcircle_cocoapods
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Cocoapods Install
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
@@ -60,7 +60,7 @@ steps:
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
 - componentType: appcircle_ios_build_sign
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
@@ -84,7 +84,7 @@ steps:
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
   - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
 - componentType: appcircle_ios_build_simulator
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Xcodebuild for iOS Simulator
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
