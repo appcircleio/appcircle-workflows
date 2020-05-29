@@ -9,7 +9,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: e4a949344d97b20977392f2a9e5fb6a91eae613c
+  commit: 54ce947372bf3ad860c9ee8955a6982773c97cdd
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
