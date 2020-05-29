@@ -46,7 +46,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component
   repoUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component.git
-  commit: 714a29f
+  commit: 9dec359
   inputs:
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
   - AC_SMARTFACE_CLI_VERSION: ""
