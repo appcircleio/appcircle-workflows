@@ -4,7 +4,7 @@ directories:
 - AC_SOURCE
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Activate SSH Private Key
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
@@ -15,7 +15,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Git Clone
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
@@ -30,7 +30,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_custom_script
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Custom Script
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-custom-script-component
@@ -41,7 +41,7 @@ steps:
   - Script: |
       puts "___ Hello world! ___"
 - componentType: appcircle_android_smartface_eject
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Smartface Eject for Android
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component
@@ -56,7 +56,7 @@ steps:
   - AC_VARIANTS: AC_VARIANTS 
   - AC_PROJECT_PATH: AC_PROJECT_PATH
 - componentType: appcircle_android_build
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Android Build
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
@@ -72,7 +72,7 @@ steps:
   - AC_APK_PATH: AC_APK_PATH
   - AC_AAB_PATH: AC_AAB_PATH
 - componentType: appcircle_android_sign
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Android Sign
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
@@ -89,7 +89,7 @@ steps:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
-  componentVersion: "1.0.0"
+  componentVersion: "1.0.*"
   stepName: Android Post Process
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
