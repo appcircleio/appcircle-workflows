@@ -68,7 +68,7 @@ steps:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
   outputs:
-  - XCODE_DEVELOPER_DIR_PATH: "$XCODE_DEVELOPER_DIR_PATH"
+  - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
