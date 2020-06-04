@@ -77,7 +77,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: 3572f8d
+  commit: 64036ae
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
