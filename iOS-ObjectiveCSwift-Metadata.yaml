@@ -32,7 +32,7 @@ steps:
   stepName: iOS Metadata
   webUrl: https://github.com/appcircleio/appcircle-ios-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-metadata-component.git
-  commit: 6ed68eb5dcb66d62d10c4fbb748c670bb8498daa
+  commit: 48433e6cf7c7203f398c42584103059497d17b46
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   outputs:
