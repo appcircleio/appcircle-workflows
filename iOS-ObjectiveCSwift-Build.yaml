@@ -57,7 +57,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
   repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
-  commit: 977c8e9069f831cbf6abfdd059f6fd04e237be8d
+  commit: 47eee3ab6fe1e2fa1f9f5095b7fa6b7c2ed65e6e
   inputs:
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
