@@ -1,0 +1,105 @@
+---
+directories:
+- AC_SOURCE
+- AC_OUTPUT_DIR
+steps:
+- componentType: appcircle_activate_ssh_key
+  componentVersion: "1.0.*"
+  stepName: Activate SSH Private Key
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
+  repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
+  commit: 54ce947372bf3ad860c9ee8955a6982773c97cdd
+  inputs:
+  - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
+  outputs:
+  - SSH_AUTH_SOCK: SSH_AUTH_SOCK
+- componentType: appcircle_git_clone
+  componentVersion: "1.0.*"
+  stepName: Git Clone
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-git-clone-component
+  repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
+  commit: 578c6b8d18ad210be6dbf93d1013517880c92d42
+  inputs:
+  - AC_GIT_URL: "$AC_GIT_URL"
+  - AC_GIT_LFS: "false"
+  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
+  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
+  outputs:
+  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+- componentType: appcircle_custom_script
+  componentVersion: "1.0.*"
+  stepName: Custom Script
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
+  inputs:
+  - Execute: "ruby"
+  - Script: |
+      puts "___ Hello world! ___"
+- componentType: appcircle_xcode_select
+  componentVersion: "1.0.*"
+  stepName: Xcode Select
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
+  repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
+  commit: 6ff62f61930f3a1e868cbdbc377fa2f0900569bd
+  inputs:
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
+  outputs:
+  - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
+- componentType: appcircle_flutter_install
+  componentVersion: "1.0.*"
+  stepName: Install Flutter
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
+  repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
+  commit: 61423100bc78f50a9ca7e1d56950926435b67208
+  outputs:
+  - PATH: "PATH"
+- componentType: appcircle_ios_flutter_build
+  componentVersion: "1.0.*"
+  stepName: Flutter Build
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component.git
+  commit: 75d9d58f04833eecd455c3561879f14f6429277a
+  inputs:
+  - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
+  - AC_FLUTTER_BUILD_MODE: "--release"
+  - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codesign"
+- componentType: appcircle_cocoapods
+  componentVersion: "1.0.*"
+  stepName: Cocoapods Install
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
+  repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
+  commit: e3d1fd1723870c033eabe296d4936fe9e7ef9919
+  inputs:
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
+- componentType: appcircle_ios_build_sign
+  componentVersion: "1.0.*"
+  stepName: Xcodebuild for Devices
+  enabled: true
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
+  commit: a1279105cd374b4d66bdbf03d3eafba7d74b6642
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_CERTIFICATES: $AC_CERTIFICATES
+  - AC_BUNDLE_IDENTIFIERS: $AC_BUNDLE_IDENTIFIERS
+  - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_METHOD_FOR_EXPORT: "auto-detect"
+  - AC_COMPILE_BITCODE_FOR_EXPORT: "NO"
+  outputs:
+  - AC_EXPORT_DIR: AC_EXPORT_DIR
+  - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
+  - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
