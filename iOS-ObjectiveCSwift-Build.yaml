@@ -67,7 +67,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: a1279105cd374b4d66bdbf03d3eafba7d74b6642
+  commit: 350e66057b4c3b2fe873f1dc5781a080f8fa187a
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SCHEME: "$AC_SCHEME"
@@ -78,7 +78,6 @@ steps:
   - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
   - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
   - AC_METHOD_FOR_EXPORT: "auto-detect"
-  - AC_COMPILE_BITCODE_FOR_EXPORT: "NO"
   outputs:
   - AC_EXPORT_DIR: AC_EXPORT_DIR
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
