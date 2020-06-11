@@ -71,16 +71,6 @@ steps:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "--release"
   - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codesign"
-- componentType: appcircle_cocoapods
-  componentVersion: "1.0.*"
-  stepName: Cocoapods Install
-  enabled: true
-  webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
-  repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
-  commit: 47eee3ab6fe1e2fa1f9f5095b7fa6b7c2ed65e6e
-  inputs:
-  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
-  - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
