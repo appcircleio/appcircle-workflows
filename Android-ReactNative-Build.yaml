@@ -45,7 +45,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-node-install-component
   repoUrl: https://github.com/appcircleio/appcircle-node-install-component.git
-  commit: 0f29428
+  commit: 8fab355
   inputs:
   - AC_SELECTED_NODE_VERSION: latest
 - componentType: appcircle_npm_yarn
