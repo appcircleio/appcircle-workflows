@@ -45,7 +45,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: 6142310
+  commit: c8c2ea6
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
@@ -56,7 +56,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component.git
-  commit: 84db87d
+  commit: 97fbc2c
   inputs:
   - AC_FLUTTER_PROJECT_DIR: $AC_REPOSITORY_DIR
   - AC_FLUTTER_BUILD_MODE: $AC_FLUTTER_BUILD_MODE 

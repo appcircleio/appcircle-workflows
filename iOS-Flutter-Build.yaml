@@ -57,7 +57,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: 61423100bc78f50a9ca7e1d56950926435b67208
+  commit: c8c2ea6703561ff319f2aa43000d8b1dd9a97f18
   outputs:
   - PATH: "PATH"
 - componentType: appcircle_ios_flutter_build
