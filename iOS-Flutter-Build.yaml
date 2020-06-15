@@ -66,11 +66,11 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component.git
-  commit: 75d9d58f04833eecd455c3561879f14f6429277a
+  commit: 5685bfc2645a4b485ab098cbdb7e1bbae85bc0a5
   inputs:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "--release"
-  - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codesign"
+  - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codesign --verbose"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
