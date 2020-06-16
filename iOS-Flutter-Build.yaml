@@ -64,6 +64,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Flutter Build
   enabled: true
+  timeout: 60000
   webUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component.git
   commit: 5685bfc2645a4b485ab098cbdb7e1bbae85bc0a5
