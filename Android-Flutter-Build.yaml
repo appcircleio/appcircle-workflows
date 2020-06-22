@@ -45,7 +45,7 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: c8c2ea6
+  commit: b460e51
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
