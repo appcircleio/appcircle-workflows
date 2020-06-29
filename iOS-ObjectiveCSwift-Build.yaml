@@ -89,9 +89,10 @@ steps:
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
-  commit: 0d9a6186cadf3e75bebbba7578dfe66d10f35ac8
+  commit: e716c64d2c94162ba444e3029d52622a4e4d3b67
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
   - AC_SCHEME: "$AC_SCHEME"
   - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
