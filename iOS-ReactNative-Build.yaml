@@ -102,7 +102,7 @@ steps:
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
   - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
 - componentType: appcircle_ios_build_simulator
-  componentVersion: "1.0.*"
+  componentVersion: "1.1.*"
   stepName: Xcodebuild for iOS Simulator
   enabled: true
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
