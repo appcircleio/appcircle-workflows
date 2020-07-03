@@ -7,6 +7,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Activate SSH Private Key
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
   commit: 54ce947372bf3ad860c9ee8955a6982773c97cdd
@@ -18,6 +19,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Git Clone
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
   commit: 578c6b8d18ad210be6dbf93d1013517880c92d42
@@ -32,6 +34,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Custom Script
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-custom-script-component
   repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
   commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
@@ -43,6 +46,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Smartface Eject for iOS
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component.git
   commit: 963fc42293665a475a93b4b3d0b9e058db59727e
@@ -61,6 +65,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Xcode Select
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
   repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
   commit: 6ff62f61930f3a1e868cbdbc377fa2f0900569bd
@@ -73,6 +78,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
   commit: 57017251d9679c9e9157502b08378e6e379cb78b
@@ -94,6 +100,7 @@ steps:
   componentVersion: "1.1.*"
   stepName: Xcodebuild for iOS Simulator
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
   commit: e716c64d2c94162ba444e3029d52622a4e4d3b67
