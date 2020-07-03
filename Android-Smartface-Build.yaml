@@ -7,6 +7,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Activate SSH Private Key
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
   commit: 54ce947
@@ -18,6 +19,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Git Clone
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
   commit: 6b82254
@@ -33,6 +35,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Custom Script
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-custom-script-component
   repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
   commit: cbea20f
@@ -44,6 +47,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Smartface Eject for Android
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component
   repoUrl: https://github.com/appcircleio/appcircle-android-smartface-eject-component.git
   commit: 9dec359
@@ -59,6 +63,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Android Build
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
   commit: f8b96f6
@@ -75,6 +80,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Android Sign
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
   commit: 64036ae
@@ -92,6 +98,7 @@ steps:
   componentVersion: "1.0.*"
   stepName: Android Post Process
   enabled: true
+  onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
   commit: f4da2cb
