@@ -81,7 +81,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: 57017251d9679c9e9157502b08378e6e379cb78b
+  commit: dc149ce1ef4b27b18c61c1fa7f0c5cb003defa0e
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
