@@ -67,13 +67,13 @@ steps:
   - PATH: "PATH"
 - componentType: appcircle_ios_flutter_build
   componentVersion: "1.0.*"
-  stepName: Flutter Build
+  stepName: Flutter Build for iOS
   enabled: true
   onError: $exit
   timeout: 60000
   webUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component.git
-  commit: 3a6d55a
+  commit: 8f229c6
   inputs:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "--release"
