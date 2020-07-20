@@ -73,7 +73,7 @@ steps:
   timeout: 3600000
   webUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-flutter-build-component.git
-  commit: 8f229c6
+  commit: 682b26d
   inputs:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "$AC_FLUTTER_BUILD_MODE"
