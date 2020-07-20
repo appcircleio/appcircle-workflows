@@ -76,8 +76,8 @@ steps:
   commit: 8f229c6
   inputs:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
-  - AC_FLUTTER_BUILD_MODE: "--release"
-  - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codesign --verbose"
+  - AC_FLUTTER_BUILD_MODE: "$AC_FLUTTER_BUILD_MODE"
+  - AC_FLUTTER_BUILD_EXTRA_ARGS: "$AC_FLUTTER_BUILD_EXTRA_ARGS"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.0.*"
   stepName: Xcodebuild for Devices
