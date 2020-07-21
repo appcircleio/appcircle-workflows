@@ -22,7 +22,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6b82254
+  commit: 904b83b
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -49,7 +49,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
-  commit: f8b96f6
+  commit: 9c8df63
   inputs:
   - AC_MODULE: $AC_MODULE
   - AC_VARIANTS: $AC_VARIANTS 
@@ -66,7 +66,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: 37eb688
+  commit: 65b1af2
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
@@ -84,6 +84,6 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: f4da2cb
+  commit: 46abd1a
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
