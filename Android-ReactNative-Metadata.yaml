@@ -19,7 +19,7 @@ steps:
   stepName: Git
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6b82254
+  commit: 904b83b
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -31,7 +31,7 @@ steps:
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git
-  commit: 552327e
+  commit: 36dff0e
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   outputs:

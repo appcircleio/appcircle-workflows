@@ -69,7 +69,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
   repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
-  commit: 6ff62f61930f3a1e868cbdbc377fa2f0900569bd
+  commit: 79e4266
   inputs:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
@@ -82,7 +82,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
   repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
-  commit: 1627f43deaebc0a3306eb5f9a1a9b7b37e6d780b
+  commit: fa877ae
   inputs:
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
@@ -93,7 +93,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: dc149ce1ef4b27b18c61c1fa7f0c5cb003defa0e
+  commit: e72d190
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
@@ -116,7 +116,7 @@ steps:
   onError: $next
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
-  commit: e716c64d2c94162ba444e3029d52622a4e4d3b67
+  commit: 8d9c109
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR

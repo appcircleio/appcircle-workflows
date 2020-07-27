@@ -22,7 +22,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6b82254
+  commit: 904b83b
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -49,7 +49,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: b460e51
+  commit: 2ed61d3
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
@@ -61,7 +61,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component.git
-  commit: 97fbc2c
+  commit: bcc10b0
   inputs:
   - AC_FLUTTER_PROJECT_DIR: $AC_REPOSITORY_DIR
   - AC_FLUTTER_BUILD_MODE: $AC_FLUTTER_BUILD_MODE 
@@ -77,7 +77,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: 37eb688
+  commit: 65b1af2
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
@@ -95,6 +95,6 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: f4da2cb
+  commit: 46abd1a
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
