@@ -49,7 +49,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-component.git
-  commit: 9c8df63
+  commit: c7c17e3
   inputs:
   - AC_MODULE: $AC_MODULE
   - AC_VARIANTS: $AC_VARIANTS 
