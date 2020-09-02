@@ -42,6 +42,20 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
+- componentType: appcircle_ios_install_certificates_and_profiles
+  componentVersion: "1.0.*"
+  stepName: Install Certificates & Profiles
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component.git
+  commit: 9c03945
+  inputs:
+  - AC_CERTIFICATES: "$AC_CERTIFICATES"
+  - AC_PROVISIONING_PROFILES: "$AC_PROVISIONING_PROFILES"
+  outputs:
+  - AC_KEYCHAIN_PATH: "AC_KEYCHAIN_PATH"
+  - AC_KEYCHAIN_PASSWORD: "AC_KEYCHAIN_PASSWORD"
 - componentType: appcircle_node_install
   componentVersion: "1.0.*"
   stepName: Install Node
@@ -87,13 +101,13 @@ steps:
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
 - componentType: appcircle_ios_build_sign
-  componentVersion: "1.0.*"
+  componentVersion: "1.1.*"
   stepName: Xcodebuild for Devices
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: e72d190
+  commit: c6ebf15
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
