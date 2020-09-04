@@ -115,3 +115,19 @@ steps:
   - AC_EXPORT_DIR: AC_EXPORT_DIR
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
   - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
+- componentType: appcircle_ios_build_simulator
+  componentVersion: "1.2.*"
+  stepName: Xcodebuild for iOS Simulator
+  enabled: true
+  onError: $next
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
+  commit: 0f26a93
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  outputs:
+  - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
