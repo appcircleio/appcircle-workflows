@@ -117,12 +117,13 @@ steps:
   onError: $next
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
-  commit: d5947ca
+  commit: ca7f4e6
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
   - AC_SCHEME: "$AC_SCHEME"
   - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
   - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_CONFIGURATION_NAME: "Debug"
   outputs:
   - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
