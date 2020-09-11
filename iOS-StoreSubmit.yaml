@@ -23,27 +23,27 @@ steps:
       echo $IPAFileUrl     
       curl -o ./$IPAFileName -k $IPAFileUrl
       echo "3"
-      sudo bundle init
+      bundle init
       echo "4"
-      sudo echo "gem \"fastlane\"">> sudo Gemfile
+      echo "gem \"fastlane\"">>Gemfile
       echo "5"
-      sudo mkdir fastlane
+      mkdir fastlane
       echo "6"
-      sudo touch fastlane/Appfile
+      touch fastlane/Appfile
       echo "7"
-      sudo touch fastlane/Fastfile
+      touch fastlane/Fastfile
       echo "8"
-      sudo echo $FastFileConfig>>sudo fastlane/Fastfile
+      echo -e $FastFileConfig>>fastlane/Fastfile
       echo "8-2"
       cat fastlane/Fastfile
       echo "9"
-      sudo echo $AppStoreConnectApiKey>>sudo fastlane/$AppStoreConnectApiKeyFileName
+      echo -e $AppStoreConnectApiKey>>$AppStoreConnectApiKeyFileName
       echo "9-2"
       cat fastlane/$AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
-      	sudo bundle exec fastlane TestFlight
+      	bundle exec fastlane TestFlight
       if $StackType ==12 
-      	sudo bundle exec fastlane Release
+      	bundle exec fastlane Release
       echo "11"
