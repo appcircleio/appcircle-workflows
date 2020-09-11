@@ -18,7 +18,7 @@ steps:
       sudo gem install fastlane -NV
       echo "2"
       sudo gem install bundler
-
+      
       echo $IPAFileName
       echo $IPAFileUrl     
       curl -o ./$IPAFileName -k $IPAFileUrl
@@ -42,3 +42,4 @@ steps:
       	bundle exec fastlane TestFlight
       if $StackType ==12 
       	bundle exec fastlane Release
+      echo "11"
