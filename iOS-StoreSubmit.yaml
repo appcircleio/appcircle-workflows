@@ -14,6 +14,18 @@ steps:
   inputs:
   - Execute: "bash"
   - Script: |
+      apt-get update 
+      apt-get install ruby-full ruby-dev gcc libffi-dev make build-essential g++ -y
+      apt-get install rubygems -y
+      apt-get install ubuntu-dev-tools -y
+      gem install fastlane -NV
+      gem install bundler
+
+      apt-get install -y locales
+      export LC_ALL=en_US.UTF-8
+      export LANG=en_US.UTF-8
+      locale-gen en_US.UTF-8
+     
       echo $IPAFileName
       echo $IPAFileUrl     
       curl -o ./$IPAFileName -k $IPAFileUrl
