@@ -39,7 +39,7 @@ steps:
       echo "9"
       echo -e $AppStoreConnectApiKey>>$AppStoreConnectApiKeyFileName
       echo "9-2"
-      cat fastlane/$AppStoreConnectApiKeyFileName
+      cat $AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
