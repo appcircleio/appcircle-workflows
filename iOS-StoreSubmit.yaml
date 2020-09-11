@@ -12,6 +12,17 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
   commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
   inputs:
-  - Execute: "ruby"
+  - Execute: "bash"
   - Script: |
-      puts "___ Hello world! ___"
+      curl -o ./$IPAFileName -k $IPAFileUrl
+      bundle init
+      echo "gem \"fastlane\"">>Gemfile
+      mkdir fastlane
+      touch fastlane/Appfile
+      touch fastlane/Fastfile
+      echo $FastFileConfig>>fastlane/Fastfile
+      echo $AppStoreConnectApiKey>>fastlane/$AppStoreConnectApiKeyFileName
+      if $StackType ==10 
+      	bundle exec fastlane TestFlight
+      if $StackType ==12
+      	bundle exec fastlane Release
