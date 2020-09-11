@@ -39,7 +39,7 @@ steps:
       echo "10"
       
       if $StackType ==10 
-      	bundle exec fastlane TestFlight
+      	sudo bundle exec fastlane TestFlight
       if $StackType ==12 
-      	bundle exec fastlane Release
+      	sudo bundle exec fastlane Release
       echo "11"
