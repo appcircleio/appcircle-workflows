@@ -33,7 +33,7 @@ steps:
       echo "7"
       touch fastlane/Fastfile
       echo "8"
-      echo -e $FastFileConfig>>fastlane/Fastfile
+      echo $FastFileConfig>>fastlane/Fastfile
       echo "8-2"
       cat fastlane/Fastfile
       echo "9"
