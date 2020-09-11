@@ -25,13 +25,14 @@ steps:
       echo "3"
       sudo bundle init
       echo "4"
-      echo "gem \"fastlane\"">>Gemfile
+      sudo echo "gem \"fastlane\"">>Gemfile
       echo "5"
-      mkdir fastlane
-      touch fastlane/Appfile
-      touch fastlane/Fastfile
-      echo $FastFileConfig>>fastlane/Fastfile
-      echo $AppStoreConnectApiKey>>fastlane/$AppStoreConnectApiKeyFileName
+      sudo mkdir fastlane
+      sudo touch fastlane/Appfile
+      sudo touch fastlane/Fastfile
+      sudo echo $FastFileConfig>>fastlane/Fastfile
+      sudo echo $AppStoreConnectApiKey>>fastlane/$AppStoreConnectApiKeyFileName
+      
       if $StackType ==10 
       	bundle exec fastlane TestFlight
       if $StackType ==12 
