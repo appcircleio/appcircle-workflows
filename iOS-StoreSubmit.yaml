@@ -28,10 +28,15 @@ steps:
       sudo echo "gem \"fastlane\"">> sudo Gemfile
       echo "5"
       sudo mkdir fastlane
+      echo "6"
       sudo touch fastlane/Appfile
+      echo "7"
       sudo touch fastlane/Fastfile
+      echo "8"
       sudo echo $FastFileConfig>>sudo fastlane/Fastfile
+      echo "9"
       sudo echo $AppStoreConnectApiKey>>sudo fastlane/$AppStoreConnectApiKeyFileName
+      echo "10"
       
       if $StackType ==10 
       	bundle exec fastlane TestFlight
