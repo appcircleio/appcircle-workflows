@@ -34,8 +34,12 @@ steps:
       sudo touch fastlane/Fastfile
       echo "8"
       sudo echo $FastFileConfig>>sudo fastlane/Fastfile
+      echo "8-2"
+      cat fastlane/Fastfile
       echo "9"
       sudo echo $AppStoreConnectApiKey>>sudo fastlane/$AppStoreConnectApiKeyFileName
+      echo "9-2"
+      cat fastlane/$AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
