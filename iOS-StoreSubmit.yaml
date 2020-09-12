@@ -20,7 +20,8 @@ steps:
       sudo gem install bundler
       
       echo $IPAFileName
-      echo $IPAFileUrl     
+      echo $IPAFileUrl
+      echo $FastFileConfig
       curl -o ./$IPAFileName -k $IPAFileUrl
       echo "3"
       bundle init
