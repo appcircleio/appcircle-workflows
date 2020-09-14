@@ -19,9 +19,6 @@ steps:
       echo "2"
       sudo gem install bundler
       
-      echo $IPAFileName
-      echo $IPAFileUrl
-      echo $FastFileConfig
       curl -o ./$IPAFileName -k $IPAFileUrl
       echo "3"
       bundle init
@@ -34,13 +31,11 @@ steps:
       echo "7"
       touch fastlane/Fastfile
       echo "8"
-      echo $FastFileConfig>>fastlane/Fastfile
+      mv $FastFileConfig >> fastlane/Fastfile
       echo "8-2"
       cat fastlane/Fastfile
       echo "9"
-      echo -e $AppStoreConnectApiKey>>$AppStoreConnectApiKeyFileName
-      echo "9-2"
-      cat $AppStoreConnectApiKeyFileName
+      mv $AppStoreConnectApiKey >> $AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
