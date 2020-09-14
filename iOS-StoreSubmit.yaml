@@ -31,11 +31,11 @@ steps:
       echo "7"
       touch fastlane/Fastfile
       echo "8"
-      mv $FastFileConfig >> fastlane/Fastfile
+      mv $FastFileConfig fastlane/Fastfile
       echo "8-2"
       cat fastlane/Fastfile
       echo "9"
-      mv $AppStoreConnectApiKey >> $AppStoreConnectApiKeyFileName
+      mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
