@@ -40,8 +40,12 @@ steps:
       cat $AppStoreConnectApiKeyFileName
       echo "10"
       
-      if $StackType ==10 
+      if [ $StackType == 10 ]
+      then
       	bundle exec fastlane TestFlight
-      if $StackType ==12 
+      fi
+      if [ $StackType == 12 ]
+      then
       	bundle exec fastlane Release
+      fi
       echo "11"
