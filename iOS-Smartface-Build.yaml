@@ -10,7 +10,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 54ce947372bf3ad860c9ee8955a6982773c97cdd
+  commit: f94cce7
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
@@ -22,7 +22,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 578c6b8d18ad210be6dbf93d1013517880c92d42
+  commit: 6343567
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"

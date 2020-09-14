@@ -1,0 +1,53 @@
+---
+directories:
+- AC_SOURCE
+- AC_OUTPUT_DIR
+steps:
+- componentType: appcircle_custom_script
+  componentVersion: "1.0.*"
+  stepName: Custom Script
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
+  inputs:
+  - Execute: "bash"
+  - Script: |
+      echo "1"
+      sudo gem install fastlane -NV
+      echo "2"
+      sudo gem install bundler
+      
+      curl -o ./$IPAFileName -k $IPAFileUrl
+      echo "3"
+      bundle init
+      echo "4"
+      echo "gem \"fastlane\"">>Gemfile
+      echo "5"
+      mkdir fastlane
+      echo "6"
+      touch fastlane/Appfile
+      echo "7"
+      touch fastlane/Fastfile
+      echo "8"
+      mv $FastFileConfig fastlane/Fastfile
+      echo "8-2"
+      cat fastlane/Fastfile
+      echo "9"
+      mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
+      echo "9-2"
+      cat $AppStoreConnectApiKeyFileName
+      echo "10"
+      fastlane env
+      echo 10-2
+      
+      if [ $StackType == 10 ]
+      then
+      	bundle exec fastlane TestFlight
+      fi
+      if [ $StackType == 12 ]
+      then
+      	bundle exec fastlane Release
+      fi
+      echo "11"
