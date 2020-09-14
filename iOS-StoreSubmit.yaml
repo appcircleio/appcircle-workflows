@@ -22,8 +22,6 @@ steps:
       curl -o ./$IPAFileName -k $IPAFileUrl
       echo "3"
       bundle init
-      echo 3-2
-      fastlane env
       echo "4"
       echo "gem \"fastlane\"">>Gemfile
       echo "5"
@@ -41,6 +39,8 @@ steps:
       echo "9-2"
       cat $AppStoreConnectApiKeyFileName
       echo "10"
+      fastlane env
+      echo 10-2
       
       if [ $StackType == 10 ]
       then
