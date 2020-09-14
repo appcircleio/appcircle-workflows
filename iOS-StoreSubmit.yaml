@@ -36,6 +36,8 @@ steps:
       cat fastlane/Fastfile
       echo "9"
       mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
+      echo "9-2"
+      cat $AppStoreConnectApiKeyFileName
       echo "10"
       
       if $StackType ==10 
