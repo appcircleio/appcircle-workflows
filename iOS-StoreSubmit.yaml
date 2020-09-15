@@ -14,11 +14,12 @@ steps:
   inputs:
   - Execute: "bash"
   - Script: |
+      export LC_ALL=en_US.UTF-8
+      export LANG=en_US.UTF-8
       echo "1"
       sudo gem install fastlane -NV
       echo "2"
       sudo gem install bundler
-      
       curl -o ./$IPAFileName -k $IPAFileUrl
       echo "3"
       bundle init
