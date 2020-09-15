@@ -3,6 +3,19 @@ directories:
 - AC_SOURCE
 - AC_OUTPUT_DIR
 steps:
+- componentType: appcircle_xcode_select
+  componentVersion: "1.0.*"
+  stepName: Xcode Select
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
+  repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
+  commit: 79e4266
+  inputs:
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  - AC_XCODE_VERSION: "11.5.x"
+  outputs:
+  - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
 - componentType: appcircle_custom_script
   componentVersion: "1.0.*"
   stepName: Custom Script
