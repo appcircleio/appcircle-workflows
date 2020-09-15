@@ -49,8 +49,7 @@ steps:
       xcode-select -s /Applications/Xcode.app/Contents/Developer
       echo 10-4
       bundle exec fastlane spaceauth -u $
-      
-      echo 10-3
+      echo 10-5
       if [ $StackType == 10 ]
       then
       	bundle exec fastlane TestFlight
