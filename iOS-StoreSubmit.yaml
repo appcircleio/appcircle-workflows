@@ -47,6 +47,8 @@ steps:
       /usr/local/itms/bin/iTMSTransporter -version
       echo 10-3
       #bundle exec fastlane spaceauth -u $
+      echo 10-4
+      xcode-select -p
       echo 10-5
       if [ $StackType == 10 ]
       then
