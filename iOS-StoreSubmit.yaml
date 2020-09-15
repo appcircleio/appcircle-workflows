@@ -46,9 +46,25 @@ steps:
       if [ $StackType == 10 ]
       then
       	bundle exec fastlane TestFlight
+        if [ $? -eq 0 ]
+        then
+          echo "TestFlight progress succeeded"
+          exit 0
+        else
+          echo "TestFlight progress failed :" >&2
+          exit 1
+        fi
       fi
       if [ $StackType == 12 ]
       then
       	bundle exec fastlane Release
+        if [ $? -eq 0 ]
+        then
+          echo "Release progress succeeded"
+          exit 0
+        else
+          echo "Release progress failed :" >&2
+          exit 1
+        fi
       fi
       echo "11"
