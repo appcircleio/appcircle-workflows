@@ -39,6 +39,8 @@ steps:
       mkdir fastlane
       touch fastlane/Appfile
       mv $FastFileConfig fastlane/Fastfile
+      cat fastlane/Fastfile
+      
       mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
       cat $AppStoreConnectApiKeyFileName
       
