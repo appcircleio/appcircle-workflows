@@ -31,38 +31,19 @@ steps:
       export LC_ALL=en_US.UTF-8
       export LANG=en_US.UTF-8
       locale
-      echo "1"
       sudo gem install fastlane -NV
-      echo "2"
       sudo gem install bundler
       curl -o ./$IPAFileName -k $IPAFileUrl
-      echo "3"
       bundle init
-      echo "4"
       echo "gem \"fastlane\"">>Gemfile
-      echo "5"
       mkdir fastlane
-      echo "6"
       touch fastlane/Appfile
-      echo "7"
       touch fastlane/Fastfile
-      echo "8"
       mv $FastFileConfig fastlane/Fastfile
-      echo "8-2"
       cat fastlane/Fastfile
-      echo "9"
       mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
-      echo "9-2"
       cat $AppStoreConnectApiKeyFileName
-      echo "10"
-      fastlane env
-      echo 10-2
-      /usr/local/itms/bin/iTMSTransporter -version
-      echo 10-3
-      #bundle exec fastlane spaceauth -u $
-      echo 10-4
-      xcode-select -p
-      echo 10-5
+      
       if [ $StackType == 10 ]
       then
       	bundle exec fastlane TestFlight --verbose
