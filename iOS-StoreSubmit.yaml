@@ -14,8 +14,10 @@ steps:
   inputs:
   - Execute: "bash"
   - Script: |
+      echo "0"
       export LC_ALL=en_US.UTF-8
       export LANG=en_US.UTF-8
+      locale
       echo "1"
       sudo gem install fastlane -NV
       echo "2"
