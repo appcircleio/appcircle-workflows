@@ -44,7 +44,8 @@ steps:
       echo "10"
       fastlane env
       echo 10-2
-      
+      /usr/local/itms/bin/iTMSTransporter -version
+      echo 10-3
       if [ $StackType == 10 ]
       then
       	bundle exec fastlane TestFlight
