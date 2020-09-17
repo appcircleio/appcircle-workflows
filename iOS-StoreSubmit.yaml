@@ -32,8 +32,6 @@ steps:
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8
       locale
-      sudo gem install fastlane -NV
-      sudo gem install bundler
       curl -o ./$IPAFileName -k $IPAFileUrl
       bundle init
       echo "1"
