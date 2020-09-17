@@ -34,25 +34,18 @@ steps:
       locale
       curl -o ./$IPAFileName -k $IPAFileUrl
       bundle init
-      echo "1"
       echo "gem \"fastlane\"">>Gemfile
-      echo "2"
       mkdir fastlane
-      echo "3"
       touch fastlane/Appfile
-      echo "4"
       touch fastlane/Fastfile
-      echo "5"
       mv $FastFileConfig fastlane/Fastfile
-      echo "6"
-      cat fastlane/Fastfile
-      echo "7"
+      #cat fastlane/Fastfile
       mv $AppStoreConnectApiKey $AppStoreConnectApiKeyFileName
-      cat $AppStoreConnectApiKeyFileName
+      #cat $AppStoreConnectApiKeyFileName
       
       if [ $StackType == 10 ]
       then
-      	bundle exec fastlane TestFlight --verbose
+      	bundle exec fastlane TestFlight #--verbose
         if [ $? -eq 0 ]
         then
           echo "TestFlight progress succeeded"
@@ -64,7 +57,7 @@ steps:
       fi
       if [ $StackType == 12 ]
       then
-      	bundle exec fastlane Release --verbose
+      	bundle exec fastlane Release #--verbose
         if [ $? -eq 0 ] 
         then
           echo "Release progress succeeded"
