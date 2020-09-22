@@ -45,7 +45,7 @@ steps:
       
       if [ $StackType == 10 ]
       then
-      	bundle exec fastlane TestFlight #--verbose
+      	bundle exec fastlane doTestFlight #--verbose
         if [ $? -eq 0 ]
         then
           echo "TestFlight progress succeeded"
@@ -57,7 +57,7 @@ steps:
       fi
       if [ $StackType == 12 ]
       then
-      	bundle exec fastlane Release #--verbose
+      	bundle exec fastlane doRelease #--verbose
         if [ $? -eq 0 ] 
         then
           echo "Release progress succeeded"
