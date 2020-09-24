@@ -46,7 +46,7 @@ steps:
         bundleIdentifier=$BundleId
         appleId="$AppleId"
 
-        dir="/usr/local/itms/bin/"
+        dir="/usr/local/itms/bin"
 
         echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > filename.itmsp/metadata.xml
         echo "<package xmlns=\"http://apple.com/itunes/importer\" version=\"software5.4\">" >> filename.itmsp/metadata.xml
@@ -81,6 +81,9 @@ steps:
         if [ $StackType == 12 ] #Release
         then
           echo "$dir/iTMSTransporter -m upload -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000"
+          
+          $dir/iTMSTransporter -m upload -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000
+          
           if [ $? -eq 0 ] 
           then
             echo "Release progress succeeded"
