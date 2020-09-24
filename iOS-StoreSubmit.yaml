@@ -61,8 +61,12 @@ steps:
         echo "    </software_assets>" >> filename.itmsp/metadata.xml 
         echo "</package>" >> filename.itmsp/metadata.xml
         
+        cat filename.itmsp/metadata.xml
+        
         if [ $StackType == 10 ] #TestFlight
         then
+          echo "$dir/iTMSTransporter -m transferTest -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f \"./filename.itmsp\" -k 100000" 
+        
           $dir/iTMSTransporter -m transferTest -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000
           
           if [ $? -eq 0 ]
@@ -76,7 +80,7 @@ steps:
         fi
         if [ $StackType == 12 ] #Release
         then
-          $dir/iTMSTransporter -m upload -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000
+          echo "$dir/iTMSTransporter -m upload -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000"
           if [ $? -eq 0 ] 
           then
             echo "Release progress succeeded"
