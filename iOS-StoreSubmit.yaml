@@ -42,7 +42,7 @@ steps:
         cp ./$IPAFileName filename.itmsp/$IPAFileName
 
         fileSize=` stat -f %z $IPAFileName`
-        md5Checksum=`find -s filename.itmsp/ -type f -exec md5 -q {} \; | md5`
+        md5Checksum=`find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \; | md5`
         bundleIdentifier=$BundleId
         appleId="$AppleId"
 
