@@ -111,10 +111,10 @@ steps:
         mkdir fastlane
         touch fastlane/Appfile
         touch fastlane/Fastfile
-        mv $FastFileConfig 'fastlane/Fastfile
+        mv $FastFileConfig "fastlane/Fastfile"
         #cat fastlane/Fastfile
-        mv '$AppStoreConnectApiKey' '$AppStoreConnectApiKeyFileName'
-        #cat $AppStoreConnectApiKeyFileName
+        mv "$AppStoreConnectApiKey" "$AppStoreConnectApiKeyFileName"
+        #cat "$AppStoreConnectApiKeyFileName"
 
         if [ $StackType == 10 ]
         then
