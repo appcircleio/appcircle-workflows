@@ -39,10 +39,15 @@ steps:
       
         mkdir filename.itmsp
 
-        cp ./$IPAFileName filename.itmsp/$IPAFileName
+        mv ./$IPAFileName filename.itmsp/$IPAFileName
 
-        fileSize=` stat -f %z $IPAFileName`
+        stat -f %z filename.itmsp/$IPAFileName
+        fileSize=`stat -f %z filename.itmsp/$IPAFileName`
+        
+        find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;
+        
         md5Checksum=`find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \; | md5`
+        
         bundleIdentifier=$BundleId
         appleId="$AppleId"
 
