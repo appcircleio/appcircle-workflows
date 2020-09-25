@@ -89,9 +89,9 @@ steps:
         fi
         if [ $StackType == 12 ] #Release
         then
-          echo "$dir/iTMSTransporter -itc_provider "B78R5LT983" -team_name "Smartface Inc." -m upload -account_type itunes_connect -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000 -v eXtreme"
-          
-          $dir/iTMSTransporter -itc_provider "B78R5LT983" -team_name "Smartface Inc." -m upload -account_type itunes_connect -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000 -v eXtreme
+          #echo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
+
+          $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
           
           if [ $? -eq 0 ] 
           then
