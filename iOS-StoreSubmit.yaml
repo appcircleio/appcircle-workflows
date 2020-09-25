@@ -67,7 +67,7 @@ steps:
         then
           echo "$dir/iTMSTransporter -m transferTest -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f \"filename.itmsp\" -k 100000 -v eXtreme" 
         
-          $dir/iTMSTransporter -m transferTest -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "filename.itmsp" -k 100000 -v eXtreme
+          $dir/iTMSTransporter -team_name "Smartface Inc." -m transferTest -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "filename.itmsp" -k 100000 -v eXtreme
           
           if [ $? -eq 0 ]
           then
