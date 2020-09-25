@@ -46,7 +46,7 @@ steps:
         
         find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;
         md5Checksum=`find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \; | md5`
-        echo md5Checksum
+        echo $md5Checksum
         
         bundleIdentifier=$BundleId
         appleId="$AppleId"
