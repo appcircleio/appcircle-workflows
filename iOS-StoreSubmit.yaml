@@ -47,6 +47,7 @@ steps:
         appleId="$AppleId"
 
         dir="/usr/local/itms/bin"
+        workDir=`pwd`
 
         echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > filename.itmsp/metadata.xml
         echo "<package xmlns=\"http://apple.com/itunes/importer\" version=\"software5.4\">" >> filename.itmsp/metadata.xml
@@ -63,11 +64,14 @@ steps:
         
         cat filename.itmsp/metadata.xml
         
+        destinationDir=$workDir"/filename.itmsp"
+        echo $destinationDir
+        
         if [ $StackType == 10 ] #TestFlight
         then
-          echo "$dir/iTMSTransporter -itc_provider "B78R5LT983" -team_name "Smartface Inc." -m transferTest -account_type itunes_connect -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f \"./filename.itmsp\" -k 100000 -v eXtreme" 
-        
-          $dir/iTMSTransporter -itc_provider "B78R5LT983" -team_name "Smartface Inc." -m transferTest -account_type itunes_connect -u '$AppleUserName' -p '$ApplicationSpecificPassword' -f "./filename.itmsp" -k 100000 -v eXtreme
+          echo $dir/iTMSTransporter -itc_provider 'B78R5LT983' -team_name 'Smartface Inc.' -m transferTest -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
+
+          $dir/iTMSTransporter -itc_provider 'B78R5LT983' -team_name 'Smartface Inc.' -m transferTest -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
           
           if [ $? -eq 0 ]
           then
