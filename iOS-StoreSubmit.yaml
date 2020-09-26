@@ -56,7 +56,7 @@ steps:
 
         echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > filename.itmsp/metadata.xml
         echo "<package xmlns=\"http://apple.com/itunes/importer\" version=\"software5.4\">" >> filename.itmsp/metadata.xml
-        echo "    <software_assets bundle_identifier=\"$bundleIdentifier\" apple_id=\"$appleId\" app_platform=\"ios\">" >> filename.itmsp/metadata.xml
+        echo "    <software_assets bundle_identifier=\"$bundleIdentifier\" app_platform=\"ios\">" >> filename.itmsp/metadata.xml
         echo "        <asset type=\"bundle\">" >> filename.itmsp/metadata.xml 
         echo "        	<data_file>" >> filename.itmsp/metadata.xml
         echo "                <size>$fileSize</size>" >> filename.itmsp/metadata.xml 
