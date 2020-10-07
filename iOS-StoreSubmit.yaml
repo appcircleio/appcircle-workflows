@@ -116,6 +116,8 @@ steps:
         mv $FastFileConfig "fastlane/Fastfile"
         #cat fastlane/Fastfile
         
+        bundle update fastlane
+        
         mv "$AppStoreConnectApiKey" "$AppStoreConnectApiKeyFileName"
         #cat "$AppStoreConnectApiKeyFileName"
 
