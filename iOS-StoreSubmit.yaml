@@ -39,13 +39,13 @@ steps:
       
         mkdir filename.itmsp
 
-        mv ./$IPAFileName filename.itmsp/$IPAFileName
+        mv ./$IPAFileName "filename.itmsp/$IPAFileName"
 
-        #stat -f %z filename.itmsp/$IPAFileName
-        fileSize=`stat -f %z filename.itmsp/$IPAFileName`
+        #stat -f %z "filename.itmsp/$IPAFileName"
+        fileSize=`stat -f %z "filename.itmsp/$IPAFileName"`
         
-        #find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;
-        md5Checksum=`find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;`
+        #find -s "filename.itmsp/$IPAFileName" -type f -exec md5 -q {} \;
+        md5Checksum=`find -s "filename.itmsp/$IPAFileName" -type f -exec md5 -q {} \;`
         #echo $md5Checksum
         
         bundleIdentifier=$BundleId
@@ -107,12 +107,14 @@ steps:
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
         bundle init
+        bundle update fastlane
         echo "gem \"fastlane\"">>Gemfile
         mkdir fastlane
         touch fastlane/Appfile
         touch fastlane/Fastfile
         mv $FastFileConfig "fastlane/Fastfile"
-        #cat fastlane/Fastfile
+        cat fastlane/Fastfile
+        
         mv "$AppStoreConnectApiKey" "$AppStoreConnectApiKeyFileName"
         #cat "$AppStoreConnectApiKeyFileName"
 
