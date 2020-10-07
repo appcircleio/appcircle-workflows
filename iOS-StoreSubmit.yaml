@@ -107,8 +107,8 @@ steps:
       
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
-        bundle install
         bundle init
+        bundle install
         echo "gem \"fastlane\"">>Gemfile
         mkdir fastlane
         touch fastlane/Appfile
