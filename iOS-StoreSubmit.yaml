@@ -32,7 +32,7 @@ steps:
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8
       locale
-      curl -o ./$IPAFileName -k $IPAFileUrl
+      curl -o "./$IPAFileName" -k $IPAFileUrl
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
