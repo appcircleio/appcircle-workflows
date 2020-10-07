@@ -107,6 +107,7 @@ steps:
       
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
+        gem install fastlane -NV
         bundle init
         bundle install
         echo "gem \"fastlane\"">>Gemfile
@@ -115,9 +116,7 @@ steps:
         touch fastlane/Fastfile
         mv $FastFileConfig "fastlane/Fastfile"
         #cat fastlane/Fastfile
-        
-        bundle update fastlane
-        
+
         mv "$AppStoreConnectApiKey" "$AppStoreConnectApiKeyFileName"
         #cat "$AppStoreConnectApiKeyFileName"
 
