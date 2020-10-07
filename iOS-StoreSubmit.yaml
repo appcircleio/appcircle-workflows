@@ -109,7 +109,6 @@ steps:
       then
         bundle install
         bundle init
-        bundle update fastlane
         echo "gem \"fastlane\"">>Gemfile
         mkdir fastlane
         touch fastlane/Appfile
