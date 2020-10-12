@@ -32,20 +32,21 @@ steps:
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8
       locale
-      curl -o ./$IPAFileName -k $IPAFileUrl
+      curl -o "./$IPAFileName" -k $IPAFileUrl
+      #cat "./$IPAFileName"
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
       
         mkdir filename.itmsp
 
-        mv ./$IPAFileName filename.itmsp/$IPAFileName
+        mv ./$IPAFileName "filename.itmsp/$IPAFileName"
 
-        #stat -f %z filename.itmsp/$IPAFileName
-        fileSize=`stat -f %z filename.itmsp/$IPAFileName`
+        #stat -f %z "filename.itmsp/$IPAFileName"
+        fileSize=`stat -f %z "filename.itmsp/$IPAFileName"`
         
-        #find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;
-        md5Checksum=`find -s filename.itmsp/$IPAFileName -type f -exec md5 -q {} \;`
+        #find -s "filename.itmsp/$IPAFileName" -type f -exec md5 -q {} \;
+        md5Checksum=`find -s "filename.itmsp/$IPAFileName" -type f -exec md5 -q {} \;`
         #echo $md5Checksum
         
         bundleIdentifier=$BundleId
@@ -106,13 +107,16 @@ steps:
       
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
+        gem install fastlane -NV
         bundle init
+        bundle install
         echo "gem \"fastlane\"">>Gemfile
         mkdir fastlane
         touch fastlane/Appfile
         touch fastlane/Fastfile
         mv $FastFileConfig "fastlane/Fastfile"
         #cat fastlane/Fastfile
+
         mv "$AppStoreConnectApiKey" "$AppStoreConnectApiKeyFileName"
         #cat "$AppStoreConnectApiKeyFileName"
 
