@@ -36,7 +36,7 @@ steps:
       #cat "./$IPAFileName"
       
       curl -O https://appcircle-common.s3-eu-west-1.amazonaws.com/apple/iTMSTransporter-2.1.0.pkg
-      installer -pkg iTMSTransporter-2.1.0.pkg -target /
+      sudo installer -pkg iTMSTransporter-2.1.0.pkg -target /
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
