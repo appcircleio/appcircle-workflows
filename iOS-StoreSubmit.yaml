@@ -37,6 +37,7 @@ steps:
       
       curl -O https://appcircle-common.s3-eu-west-1.amazonaws.com/apple/iTMSTransporter-2.1.0.pkg
       sudo installer -pkg iTMSTransporter-2.1.0.pkg -target /
+      sudo cp -R /usr/local/itms $HOME/Documents
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
@@ -55,7 +56,7 @@ steps:
         bundleIdentifier=$BundleId
         appleId="$AppleId"
 
-        dir="/usr/local/itms/bin"
+        dir=$HOME"/Documents/itms/bin"
         workDir=`pwd`
 
         echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > filename.itmsp/metadata.xml
