@@ -37,6 +37,7 @@ steps:
       
       curl -O https://appcircle-common.s3-eu-west-1.amazonaws.com/apple/iTMSTransporter-2.1.0.pkg
       sudo installer -pkg iTMSTransporter-2.1.0.pkg -target /
+      sudo chown -R vagrant: /usr/local/itms
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
