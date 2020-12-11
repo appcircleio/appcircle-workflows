@@ -80,7 +80,7 @@ steps:
         then
           #echo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
 
-          sudo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
+          yes | sudo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
           
           if [ $? -eq 0 ]
           then
@@ -95,7 +95,7 @@ steps:
         then
           #echo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
 
-          sudo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
+          yes | sudo $dir/iTMSTransporter -m upload -u "$AppleUserName" -p "$ApplicationSpecificPassword" -f "$destinationDir" -k 100000 -v eXtreme
           
           if [ $? -eq 0 ] 
           then
