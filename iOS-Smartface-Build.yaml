@@ -63,7 +63,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-smartface-eject-component.git
-  commit: 421c079
+  commit: 6743e15
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_SMARTFACE_CLI_VERSION: ""
@@ -88,6 +88,17 @@ steps:
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
   outputs:
   - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
+- componentType: appcircle_cocoapods
+  componentVersion: "1.0.*"
+  stepName: Cocoapods Install
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
+  repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
+  commit: fa877ae
+  inputs:
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.1.*"
   stepName: Xcodebuild for Devices
