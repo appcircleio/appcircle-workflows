@@ -1,0 +1,123 @@
+---
+directories:
+- AC_SOURCE
+- AC_OUTPUT_DIR
+steps:
+- componentType: appcircle_activate_ssh_key
+  componentVersion: "1.0.*"
+  stepName: Activate SSH Private Key
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
+  repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
+  commit: 3f323d7
+  inputs:
+  - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
+  outputs:
+  - SSH_AUTH_SOCK: SSH_AUTH_SOCK
+- componentType: appcircle_git_clone
+  componentVersion: "1.0.*"
+  stepName: Git Clone
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-git-clone-component
+  repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
+  commit: 6343567
+  inputs:
+  - AC_GIT_URL: "$AC_GIT_URL"
+  - AC_GIT_LFS: "false"
+  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
+  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
+  outputs:
+  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+- componentType: appcircle_custom_script
+  componentVersion: "1.0.*"
+  stepName: Custom Script
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  commit: cbea20fd9b7c43c6d1c98390ded12466f15287bf
+  inputs:
+  - Execute: "ruby"
+  - Script: |
+      puts "___ Hello world! ___"
+- componentType: appcircle_ios_install_certificates_and_profiles
+  componentVersion: "1.0.*"
+  stepName: Install Certificates & Profiles
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component.git
+  commit: 9c03945
+  inputs:
+  - AC_CERTIFICATES: "$AC_CERTIFICATES"
+  - AC_PROVISIONING_PROFILES: "$AC_PROVISIONING_PROFILES"
+  outputs:
+  - AC_KEYCHAIN_PATH: "AC_KEYCHAIN_PATH"
+  - AC_KEYCHAIN_PASSWORD: "AC_KEYCHAIN_PASSWORD"
+- componentType: appcircle_xcode_select
+  componentVersion: "1.0.*"
+  stepName: Xcode Select
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
+  repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
+  commit: 79e4266
+  inputs:
+  - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
+  outputs:
+  - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
+- componentType: appcircle_cocoapods
+  componentVersion: "1.0.*"
+  stepName: Cocoapods Install
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-cocoapods-component
+  repoUrl: https://github.com/appcircleio/appcircle-cocoapods-component.git
+  commit: fa877ae
+  inputs:
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_REPOSITORY_DIR: "$AC_REPOSITORY_DIR"
+- componentType: appcircle_ios_build_sign
+  componentVersion: "1.1.*"
+  stepName: Xcodebuild for Devices
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
+  commit: d100e9c
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_CERTIFICATES: $AC_CERTIFICATES
+  - AC_BUNDLE_IDENTIFIERS: $AC_BUNDLE_IDENTIFIERS
+  - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_METHOD_FOR_EXPORT: "auto-detect"
+  outputs:
+  - AC_EXPORT_DIR: AC_EXPORT_DIR
+  - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
+  - AC_ARCHIVE_PATH: AC_ARCHIVE_PATH
+- componentType: appcircle_ios_build_simulator
+  componentVersion: "1.2.*"
+  stepName: Xcodebuild for iOS Simulator
+  enabled: true
+  onError: $next
+  webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
+  repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
+  commit: 99a9f03
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
+  - AC_SCHEME: "$AC_SCHEME"
+  - AC_ARCHIVE_FLAGS: "$AC_XCODE_BUILD_EXTRA_FLAGS"
+  - AC_PROJECT_PATH: "$AC_PROJECT_PATH"
+  - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
+  - AC_CONFIGURATION_NAME: "Debug"
+  outputs:
+  - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
