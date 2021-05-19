@@ -71,7 +71,7 @@ steps:
   - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
 - componentType: appcircle_flutter_install
   componentVersion: "1.0.*"
-  stepName: Install Flutter
+  stepName: Flutter Install
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component

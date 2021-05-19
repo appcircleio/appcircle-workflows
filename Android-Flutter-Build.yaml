@@ -49,7 +49,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: 2ed61d3
+  commit: 07d9e56
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
