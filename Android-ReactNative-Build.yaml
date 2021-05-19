@@ -54,12 +54,12 @@ steps:
   - AC_SELECTED_NODE_VERSION: latest
 - componentType: appcircle_npm_yarn
   componentVersion: "1.0.*"
-  stepName: NPM/YARN Command
+  stepName: npm/Yarn Commands
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-npm-yarn-component
   repoUrl: https://github.com/appcircleio/appcircle-npm-yarn-component.git
-  commit: 968e2a7
+  commit: 59f9fad
   inputs:
   - AC_WORKING_DIR: $AC_REPOSITORY_DIR
 - componentType: appcircle_android_build
