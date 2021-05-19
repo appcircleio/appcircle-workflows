@@ -99,11 +99,11 @@ steps:
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
   componentVersion: "1.0.*"
-  stepName: Android Post Process
+  stepName: Android App Post-Processor
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: 46abd1a
+  commit: a9bc03b
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
