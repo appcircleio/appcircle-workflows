@@ -121,3 +121,11 @@ steps:
   - AC_CONFIGURATION_NAME: "Debug"
   outputs:
   - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
+- componentType: appcircle_export_build_artifacts
+  componentVersion: "1.0.*"
+  stepName: Export Build Artifacts
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+  repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+  commit: d5c2387
