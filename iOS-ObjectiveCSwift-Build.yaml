@@ -128,4 +128,4 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
   repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
-  commit: 722026a
+  commit: afa3453
