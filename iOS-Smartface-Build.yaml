@@ -145,6 +145,4 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
   repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
-  commit: 9c29e2f
-  inputs:
-  - AC_METADATA_OUTPUT_PATH: $AC_METADATA_OUTPUT_PATH
+  commit: 30408cb
