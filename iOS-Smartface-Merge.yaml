@@ -141,6 +141,7 @@ steps:
 - componentType: appcircle_export_build_artifacts
   componentVersion: "1.0.*"
   stepName: Export Build Artifacts
+  alwaysRun: true
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
