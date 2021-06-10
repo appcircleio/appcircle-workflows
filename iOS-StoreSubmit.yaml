@@ -27,7 +27,6 @@ steps:
   inputs:
   - Execute: "bash"
   - Script: |
-      echo "0"
       export LC_ALL=en_US.UTF-8
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8
@@ -37,7 +36,7 @@ steps:
       
       curl -O https://appcircle-common.s3-eu-west-1.amazonaws.com/apple/iTMSTransporter-2.1.0.pkg
       sudo installer -pkg iTMSTransporter-2.1.0.pkg -target /
-      sudo chown -R vagrant: /usr/local/itms
+      sudo chown -R $(whoami): /usr/local/itms
           
       if [ $appleStoreSubmitApiType == 0 ]   #ApplicationSpecificPasswordConnection
       then
@@ -111,7 +110,7 @@ steps:
       
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
-        gem install fastlane -NV
+        #gem install fastlane -NV
         bundle init
         bundle install
         echo "gem \"fastlane\"">>Gemfile
@@ -149,4 +148,3 @@ steps:
           fi
         fi
       fi
-      echo "11"
