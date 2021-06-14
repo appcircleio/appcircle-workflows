@@ -91,7 +91,7 @@ steps:
   inputs:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "$AC_FLUTTER_BUILD_MODE"
-  - AC_FLUTTER_BUILD_EXTRA_ARGS: "$AC_FLUTTER_BUILD_EXTRA_ARGS"
+  - AC_FLUTTER_BUILD_EXTRA_ARGS: "--no-codedesign --verbose"
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.1.*"
   stepName: Xcodebuild for Devices
