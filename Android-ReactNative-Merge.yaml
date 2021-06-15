@@ -54,12 +54,12 @@ steps:
   - AC_SELECTED_NODE_VERSION: latest
 - componentType: appcircle_npm_yarn
   componentVersion: "1.0.*"
-  stepName: NPM/YARN Command
+  stepName: npm/Yarn Commands
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-npm-yarn-component
   repoUrl: https://github.com/appcircleio/appcircle-npm-yarn-component.git
-  commit: 968e2a7
+  commit: 59f9fad
   inputs:
   - AC_WORKING_DIR: $AC_REPOSITORY_DIR
 - componentType: appcircle_android_build
@@ -99,11 +99,22 @@ steps:
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
   componentVersion: "1.0.*"
-  stepName: Android Post Process
+  stepName: Android App Post-Processor
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: 46abd1a
+  commit: d8365d3
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
+- componentType: appcircle_export_build_artifacts
+  componentVersion: "1.0.*"
+  stepName: Export Build Artifacts
+  alwaysRun: true
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+  repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+  commit: eb322a3
+  inputs:
+  - AC_UPLOAD_DIR: $AC_OUTPUT_DIR

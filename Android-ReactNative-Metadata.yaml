@@ -36,3 +36,14 @@ steps:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   outputs:
   - AC_METADATA_OUTPUT_PATH: AC_OUTPUT_DIR
+- componentType: appcircle_export_build_artifacts
+  componentVersion: "1.0.*"
+  stepName: Export Build Artifacts
+  alwaysRun: true
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+  repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+  commit: eb322a3
+  inputs:
+  - AC_UPLOAD_DIR: $AC_OUTPUT_DIR

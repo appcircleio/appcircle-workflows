@@ -68,12 +68,12 @@ steps:
   - AC_SELECTED_NODE_VERSION: latest
 - componentType: appcircle_npm_yarn
   componentVersion: "1.0.*"
-  stepName: NPM/YARN Command
+  stepName: npm/Yarn Commands
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-npm-yarn-component
   repoUrl: https://github.com/appcircleio/appcircle-npm-yarn-component.git
-  commit: 0b882232ab426b64b6d1be43918cf2a30c07d9b3
+  commit: 59f9fad
   inputs:
   - AC_WORKING_DIR: $AC_REPOSITORY_DIR
 - componentType: appcircle_xcode_select
@@ -83,7 +83,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-xcode-select-component
   repoUrl: https://github.com/appcircleio/appcircle-xcode-select-component.git
-  commit: 79e4266
+  commit: f94a19c
   inputs:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
   - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
@@ -141,3 +141,14 @@ steps:
   - AC_CONFIGURATION_NAME: "Release"
   outputs:
   - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
+- componentType: appcircle_export_build_artifacts
+  componentVersion: "1.0.*"
+  stepName: Export Build Artifacts
+  alwaysRun: true
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+  repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+  commit: eb322a3
+  inputs:
+  - AC_UPLOAD_DIR: $AC_OUTPUT_DIR

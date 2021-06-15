@@ -49,7 +49,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: 2ed61d3
+  commit: 07d9e56
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
@@ -90,11 +90,22 @@ steps:
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
   componentVersion: "1.0.*"
-  stepName: Android Post Process
+  stepName: Android App Post-Processor
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: 46abd1a
+  commit: d8365d3
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
+- componentType: appcircle_export_build_artifacts
+  componentVersion: "1.0.*"
+  stepName: Export Build Artifacts
+  alwaysRun: true
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+  repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+  commit: eb322a3
+  inputs:
+  - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
