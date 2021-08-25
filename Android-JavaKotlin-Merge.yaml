@@ -66,7 +66,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: 65b1af2
+  commit: 9a9a13c
   inputs:  
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
@@ -74,6 +74,7 @@ steps:
   - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
   - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
   - AC_ANDROID_ALIAS_PASSWORD: $AC_ANDROID_ALIAS_PASSWORD
+  - AC_V2_SIGN: "false"
   outputs:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
