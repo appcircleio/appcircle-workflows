@@ -63,7 +63,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-node-install-component
   repoUrl: https://github.com/appcircleio/appcircle-node-install-component.git
-  commit: 8dfca93
+  commit: 0ed841c
   inputs:
   - AC_SELECTED_NODE_VERSION: latest
 - componentType: appcircle_npm_yarn

@@ -61,7 +61,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component.git
-  commit: ff1f6a2
+  commit: 09b7012
   inputs:
   - AC_FLUTTER_PROJECT_DIR: $AC_REPOSITORY_DIR
   - AC_FLUTTER_BUILD_MODE: $AC_FLUTTER_BUILD_MODE 
