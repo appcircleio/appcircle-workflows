@@ -118,7 +118,7 @@ steps:
 - componentType: appcircle_ios_build_simulator
   componentVersion: "1.2.*"
   stepName: Xcodebuild for iOS Simulator
-  enabled: true
+  enabled: false
   onError: $next
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
