@@ -65,7 +65,7 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-node-install-component.git
   commit: 0ed841c
   inputs:
-  - AC_SELECTED_NODE_VERSION: latest
+  - AC_SELECTED_NODE_VERSION: lts
 - componentType: appcircle_npm_yarn
   componentVersion: "1.0.*"
   stepName: npm/Yarn Commands
