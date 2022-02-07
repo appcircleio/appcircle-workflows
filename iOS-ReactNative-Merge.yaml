@@ -65,7 +65,7 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-node-install-component.git
   commit: 8dfca93
   inputs:
-  - AC_SELECTED_NODE_VERSION: latest
+  - AC_SELECTED_NODE_VERSION: lts
 - componentType: appcircle_npm_yarn
   componentVersion: "1.0.*"
   stepName: npm/Yarn Commands
@@ -126,7 +126,7 @@ steps:
 - componentType: appcircle_ios_build_simulator
   componentVersion: "1.2.*"
   stepName: Xcodebuild for iOS Simulator
-  enabled: true
+  enabled: false
   onError: $next
   webUrl: https://github.com/appcircleio/appcircle-ios-build-simulator
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-simulator.git
