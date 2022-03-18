@@ -28,6 +28,7 @@ steps:
   - AC_GIT_LFS: "false"
   - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
   - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
+  - AC_GIT_CACHE_CREDENTIALS: "true"
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_custom_script
