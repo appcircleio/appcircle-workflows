@@ -16,6 +16,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
+  componentVersion: "1.0.*"
   stepName: Git
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
@@ -25,9 +26,11 @@ steps:
   - AC_GIT_LFS: "false"
   - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
   - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
+  - AC_GIT_CACHE_CREDENTIALS: "true"
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_metadata_android
+  componentVersion: "1.0.*"
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git
