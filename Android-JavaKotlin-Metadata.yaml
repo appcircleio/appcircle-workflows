@@ -34,7 +34,7 @@ steps:
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git
-  commit: 36dff0e
+  commit: 9375bbe
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   outputs:
