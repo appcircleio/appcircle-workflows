@@ -43,6 +43,7 @@ steps:
   - Execute: "bash"
   - Script: |
       echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $AC_ENV_FILE_PATH
+      echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/19.2.5345600" >> $AC_ENV_FILE_PATH
 - componentType: appcircle_android_smartface_eject
   componentVersion: "1.0.*"
   stepName: Smartface Eject for Android
