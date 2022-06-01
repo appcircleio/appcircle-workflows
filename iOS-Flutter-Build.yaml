@@ -93,6 +93,34 @@ steps:
   - AC_FLUTTER_PROJECT_PATH: "$AC_REPOSITORY_DIR"
   - AC_FLUTTER_BUILD_MODE: "$AC_FLUTTER_BUILD_MODE"
   - AC_FLUTTER_BUILD_EXTRA_ARGS: "$AC_FLUTTER_BUILD_EXTRA_ARGS"
+- componentType: appcircle_ios_build_version_increment
+  componentVersion: 2.0.*
+  stepName: Increment Build and Version Number
+  webUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment'
+  repoUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment.git'
+  commit: bec721e
+  enabled: true
+  onError: $exit
+  alwaysRun: false
+  inputs:
+    - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+    - AC_PROJECT_PATH: $AC_PROJECT_PATH
+    - AC_SCHEME: $AC_SCHEME
+    - AC_BUILD_NUMBER_SOURCE: $AC_BUILD_NUMBER_SOURCE
+    - AC_IOS_BUILD_NUMBER: $AC_IOS_BUILD_NUMBER
+    - AC_BUILD_OFFSET: $AC_BUILD_OFFSET
+    - AC_VERSION_NUMBER_SOURCE: $AC_VERSION_NUMBER_SOURCE
+    - AC_IOS_VERSION_NUMBER: $AC_IOS_VERSION_NUMBER
+    - AC_VERSION_STRATEGY: $AC_VERSION_STRATEGY
+    - AC_VERSION_OFFSET: $AC_VERSION_OFFSET
+    - AC_OMIT_ZERO_PATCH_VERSION: $AC_OMIT_ZERO_PATCH_VERSION
+    - AC_BUNDLE_ID: $AC_BUNDLE_ID
+    - AC_APPSTORE_COUNTRY: $AC_APPSTORE_COUNTRY
+    - AC_TARGETS: $AC_TARGETS
+    - AC_IOS_CONFIGURATION_NAME: $AC_IOS_CONFIGURATION_NAME
+  outputs:
+    - AC_IOS_NEW_BUILD_NUMBER: ''
+    - AC_IOS_NEW_VERSION_NUMBER: ''  
 - componentType: appcircle_ios_build_sign
   componentVersion: "1.1.*"
   stepName: Xcodebuild for Devices
