@@ -97,7 +97,7 @@ steps:
   stepName: Increment Build and Version Number
   webUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment'
   repoUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment.git'
-  commit: 76dad0d
+  commit: 4707781
   enabled: true
   onError: $exit
   alwaysRun: false
