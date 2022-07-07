@@ -44,6 +44,29 @@ steps:
   - Script: |
       echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $AC_ENV_FILE_PATH
       echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/19.2.5345600" >> $AC_ENV_FILE_PATH
+- componentType: appcircle_android_build_version_increment
+  componentVersion: 1.0.*
+  stepName: Increment Build and Version Number
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-android-build-version-increment-component
+  repoUrl: https://github.com/appcircleio/appcircle-android-build-version-increment-component.git
+  commit: 9ec1626
+  inputs:
+  - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
+  - AC_PROJECT_PATH: $AC_PROJECT_PATH
+  - AC_BUILD_NUMBER_SOURCE: $AC_BUILD_NUMBER_SOURCE
+  - AC_ANDROID_BUILD_NUMBER: $AC_ANDROID_BUILD_NUMBER
+  - AC_BUILD_OFFSET: $AC_BUILD_OFFSET
+  - AC_VERSION_NUMBER_SOURCE: $AC_VERSION_NUMBER_SOURCE
+  - AC_ANDROID_VERSION_NUMBER: $AC_ANDROID_VERSION_NUMBER
+  - AC_VERSION_STRATEGY: $AC_VERSION_STRATEGY
+  - AC_VERSION_OFFSET: $AC_VERSION_OFFSET
+  - AC_OMIT_ZERO_PATCH_VERSION: $AC_OMIT_ZERO_PATCH_VERSION
+  - AC_VERSION_FLAVOR: $AC_VERSION_FLAVOR
+  outputs:
+  - AC_ANDROID_NEW_VERSION_CODE: ''
+  - AC_ANDROID_NEW_VERSION_NAME: ''
 - componentType: appcircle_android_smartface_eject
   componentVersion: "1.0.*"
   stepName: Smartface Eject for Android
