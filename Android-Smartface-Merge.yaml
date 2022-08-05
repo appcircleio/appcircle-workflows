@@ -31,19 +31,6 @@ steps:
   - AC_GIT_CACHE_CREDENTIALS: "true"
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
-- componentType: appcircle_custom_script
-  componentVersion: "1.0.*"
-  stepName: Change Java Version
-  enabled: true
-  onError: $exit
-  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
-  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
-  commit: cbea20f
-  inputs:
-  - Execute: "bash"
-  - Script: |
-      echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $AC_ENV_FILE_PATH
-      echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/19.2.5345600" >> $AC_ENV_FILE_PATH
 - componentType: appcircle_android_build_version_increment
   componentVersion: 1.0.*
   stepName: Increment Build and Version Number
