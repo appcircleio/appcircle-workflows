@@ -13,7 +13,7 @@ steps:
   commit: f94a19c
   inputs:
   - AC_XCODE_LIST_DIR: "$AC_XCODE_LIST_DIR"
-  - AC_XCODE_VERSION: "14.0.x"
+  - AC_XCODE_VERSION: "$AC_XCODE_VERSION"
   outputs:
   - XCODE_DEVELOPER_DIR_PATH: "XCODE_DEVELOPER_DIR_PATH"
 - componentType: appcircle_custom_script
