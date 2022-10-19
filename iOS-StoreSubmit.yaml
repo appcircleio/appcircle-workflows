@@ -111,7 +111,9 @@ steps:
       if [ $appleStoreSubmitApiType == 1 ]   #AppStoreConnectApiConnection
       then
         #gem install fastlane -NV
-        export ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD=true
+        if [[ "$AC_XCODE_VERSION" == "13."* ]];
+            export ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD=true
+        fi
         bundle init
         bundle install
         echo "gem \"fastlane\"">>Gemfile
