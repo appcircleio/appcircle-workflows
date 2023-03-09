@@ -26,11 +26,10 @@ steps:
           mv "$Gemfile" "Gemfile"
           mv "$Pluginfile" "Pluginfile"
           mkdir fastlane
-          touch fastlane/Appfile
           touch fastlane/Fastfile
           mv "$FastFileConfig" "fastlane/Fastfile"
-          mv "$AppFileConfig" "fastlane/Appfile"
           mv "$ApiKey" "$ApiKeyFileName"
+          bundle exec fastlane install_plugins
           bundle exec fastlane $FastlaneParams --verbose
           if [ $? -eq 0 ]
           then
