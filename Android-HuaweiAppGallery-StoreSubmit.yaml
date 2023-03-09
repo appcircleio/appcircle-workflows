@@ -29,6 +29,7 @@ steps:
           touch fastlane/Fastfile
           mv "$FastFileConfig" "fastlane/Fastfile"
           mv "$ApiKey" "$ApiKeyFileName"
+          bundle exec fastlane add_plugin huawei_appgallery_connect
           bundle exec fastlane install_plugins
           bundle exec fastlane $FastlaneParams --verbose
           if [ $? -eq 0 ]
