@@ -1,0 +1,42 @@
+directories:
+  - AC_OUTPUT_DIR
+  - AC_SOURCE
+steps:
+  - componentType: appcircle_custom_script
+    componentVersion: 1.0.*
+    stepName: Custom Script
+    webUrl: 'https://github.com/appcircleio/appcircle-custom-script'
+    repoUrl: 'https://github.com/appcircleio/appcircle-custom-script.git'
+    commit: c163e15
+    enabled: true
+    onError: $exit
+    alwaysRun: false
+    inputs:
+      - Execute: bash
+      - Script: |
+          export LC_ALL=en_US.UTF-8
+          export LANG=en_US.UTF-8
+          export LANGUAGE=en_US.UTF-8
+          locale
+
+          curl -o "./$AndroidFileName" -k $AndroidFileUrl
+
+          bundle init
+          bundle install
+          echo "gem \"fastlane\"">>Gemfile
+          mkdir fastlane
+          touch fastlane/Appfile
+          touch fastlane/Fastfile
+          mv "$FastFileConfig" "fastlane/Fastfile"
+          mv "$AppFileConfig" "fastlane/Appfile"
+          mv "$ApiKey" "$ApiKeyFileName"
+          bundle exec fastlane $FastlaneParams --verbose
+          if [ $? -eq 0 ]
+          then
+          echo "PlayStore progress succeeded"
+          exit 0
+          else
+          echo "PlayStore progress failed :" >&2
+          exit 1
+          fi
+    outputs: []
