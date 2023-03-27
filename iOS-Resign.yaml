@@ -18,6 +18,7 @@ steps:
           export LANG=en_US.UTF-8
           export LANGUAGE=en_US.UTF-8
           locale
+          printenv
 
           curl -o "./$ResignFileName" -k $ResignFileUrl
           mv "$ResignFileName" "$AC_OUTPUT_DIR/$ResignFileName"
