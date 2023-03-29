@@ -1,34 +1,39 @@
 directories:
-  - AC_SOURCE
   - AC_OUTPUT_DIR
+  - AC_SOURCE
 steps:
-  - componentType: appcircle_android_resign
+  - componentType: appcircle_custom_script
     componentVersion: 1.0.*
-    stepName: Android Re-Sign
-    webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
-    repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
-    commit: aad5002
+    stepName: Custom Script
+    webUrl: 'https://github.com/appcircleio/appcircle-custom-script'
+    repoUrl: 'https://github.com/appcircleio/appcircle-custom-script.git'
+    commit: c163e15
     enabled: true
     onError: $exit
     alwaysRun: false
     inputs:
-      - AC_RESIGN_APK_URL: $ResignFileUrl
-      - AC_RESIGN_FILENAME: $ResignFileName
-      - AC_ANDROID_KEYSTORE_PATH: $AC_ANDROID_KEYSTORE_PATH
-      - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
-      - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
-      - AC_ANDROID_ALIAS_PASSWORD: $AC_ANDROID_ALIAS_PASSWORD
-    outputs:
-      - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
-      - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
+      - Execute: bash
+      - Script: |
+          export LC_ALL=en_US.UTF-8
+          export LANG=en_US.UTF-8
+          export LANGUAGE=en_US.UTF-8
+          locale
+
+          curl -o "./$ResignFileName" -k $ResignFileUrl
+          mv "$ResignFileName" "$AC_OUTPUT_DIR/$ResignFileName"
+
+          echo "hello android resign"
+          exit 0
+          fi
+    outputs: []
   - componentType: appcircle_export_build_artifacts
-    componentVersion: 1.0.*
+    componentVersion: "1.0.*"
     stepName: Export Build Artifacts
     alwaysRun: true
     enabled: true
     onError: $exit
-    webUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts'
-    repoUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts.git'
+    webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+    repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
     commit: eb322a3
     inputs:
       - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
