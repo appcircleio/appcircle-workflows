@@ -15,7 +15,6 @@ steps:
       - Execute: bash
       - Script: |-
           printenv
-          echo "AC_XCODE_VERSION=xcode.14.0" >> $AC_ENV_FILE_PATH
     outputs: []
   - componentType: appcircle_ios_install_certificates_and_profiles
     componentVersion: 1.0.*
