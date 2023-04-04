@@ -2,38 +2,45 @@ directories:
   - AC_OUTPUT_DIR
   - AC_SOURCE
 steps:
-  - componentType: appcircle_custom_script
+  - componentType: appcircle_ios_install_certificates_and_profiles
     componentVersion: 1.0.*
-    stepName: Custom Script
-    webUrl: 'https://github.com/appcircleio/appcircle-custom-script'
-    repoUrl: 'https://github.com/appcircleio/appcircle-custom-script.git'
-    commit: c163e15
+    stepName: Install Certificates & Profiles
+    webUrl: >-
+      https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component
+    repoUrl: >-
+      https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component.git
+    commit: 9c03945
     enabled: true
     onError: $exit
     alwaysRun: false
     inputs:
-      - Execute: bash
-      - Script: |
-          export LC_ALL=en_US.UTF-8
-          export LANG=en_US.UTF-8
-          export LANGUAGE=en_US.UTF-8
-          locale
-
-          curl -o "./$ResignFileName" -k $ResignFileUrl
-          mv "$ResignFileName" "$AC_OUTPUT_DIR/$ResignFileName"
-
-          echo "hello android resign"
-          exit 0
-          fi
+      - AC_CERTIFICATES: $AC_CERTIFICATES
+      - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
+    outputs:
+      - AC_KEYCHAIN_PATH: AC_KEYCHAIN_PATH
+      - AC_KEYCHAIN_PASSWORD: AC_KEYCHAIN_PASSWORD
+  - componentType: appcircle_ios_resign
+    componentVersion: 1.0.*
+    stepName: Resign IPA
+    webUrl: 'https://github.com/appcircleio/appcircle-ios-resign-component'
+    repoUrl: 'https://github.com/appcircleio/appcircle-ios-resign-component.git'
+    commit: a1353d6
+    enabled: true
+    onError: $exit
+    alwaysRun: false
+    inputs:
+      - AC_RESIGN_IPA_URL: $ResignFileUrl
+      - AC_RESIGN_TARGETS: $Targets
+      - AC_RESIGN_FILENAME: $ResignFileName
     outputs: []
   - componentType: appcircle_export_build_artifacts
-    componentVersion: "1.0.*"
+    componentVersion: 1.0.*
     stepName: Export Build Artifacts
     alwaysRun: true
     enabled: true
     onError: $exit
-    webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
-    repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
+    webUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts'
+    repoUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts.git'
     commit: eb322a3
     inputs:
       - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
