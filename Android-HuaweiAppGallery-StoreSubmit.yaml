@@ -22,8 +22,8 @@ steps:
           curl -o "./$AndroidFileName" -k $AndroidFileUrl
 
           bundle init
-          bundle install
           mv "$Gemfile" "Gemfile"
+          bundle install
           mv "$Pluginfile" "Pluginfile"
           mkdir fastlane
           touch fastlane/Fastfile
