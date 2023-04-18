@@ -116,8 +116,8 @@ steps:
             export ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD=true
         fi
         bundle init
-        bundle install
         echo "gem \"fastlane\"">>Gemfile
+        bundle install
         mkdir fastlane
         touch fastlane/Appfile
         touch fastlane/Fastfile
