@@ -7,13 +7,14 @@ steps:
     stepName: Android Re-Sign
     webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
-    commit: d6ec5c8
+    commit: 66c78fb
     enabled: true
     onError: $exit
     alwaysRun: false
     inputs:
       - AC_RESIGN_APK_URL: $ResignFileUrl
       - AC_RESIGN_FILENAME: $ResignFileName
+      - AC_RESIGN_TARGETS: $Targets
       - AC_ANDROID_KEYSTORE_PATH: $AC_ANDROID_KEYSTORE_PATH
       - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
       - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
