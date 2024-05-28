@@ -10,17 +10,17 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 3f323d7
+  commit: 6f58522
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
   componentVersion: "1.0.*"
-  stepName: Git
+  stepName: Git Clone
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6343567
+  commit: aa07fc1
   inputs:
   - AC_GIT_URL: "$AC_GIT_URL"
   - AC_GIT_LFS: "false"
@@ -28,7 +28,7 @@ steps:
   - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
   - AC_GIT_CACHE_CREDENTIALS: "true"
   outputs:
-  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+  - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_metadata_android
   componentVersion: "1.0.*"
   stepName: Metadata
