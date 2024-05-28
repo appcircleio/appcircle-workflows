@@ -33,7 +33,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_metadata_android
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git

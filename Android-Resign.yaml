@@ -23,7 +23,7 @@ steps:
       - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
       - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
   - componentType: appcircle_export_build_artifacts
-    componentVersion: "1.0.*"
+    componentVersion: 1.0.*
     stepName: Export Build Artifacts
     alwaysRun: true
     enabled: true
