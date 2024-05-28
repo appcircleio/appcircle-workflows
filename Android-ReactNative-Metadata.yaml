@@ -4,7 +4,7 @@ directories:
 - AC_OUTPUT_DIR
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Activate SSH Private Key
   enabled: true
   onError: $exit
@@ -16,7 +16,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Git Clone
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
@@ -30,7 +30,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_metadata_android
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git
@@ -40,7 +40,7 @@ steps:
   outputs:
   - AC_METADATA_OUTPUT_PATH: AC_OUTPUT_DIR
 - componentType: appcircle_export_build_artifacts
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Export Build Artifacts
   alwaysRun: true
   enabled: true

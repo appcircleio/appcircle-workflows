@@ -4,7 +4,7 @@ directories:
 - AC_SOURCE
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Activate SSH Private Key
   enabled: true
   onError: $exit
@@ -16,7 +16,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Git Clone
   enabled: true
   onError: $exit
@@ -32,7 +32,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
 - componentType: appcircle_node_install
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Install Node
   enabled: true
   onError: $exit
@@ -65,7 +65,7 @@ steps:
   - AC_ANDROID_NEW_VERSION_CODE: ''
   - AC_ANDROID_NEW_VERSION_NAME: ''
 - componentType: appcircle_android_smartface_eject
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Smartface Eject for Android
   enabled: true
   onError: $exit
@@ -81,7 +81,7 @@ steps:
   - AC_VARIANTS: AC_VARIANTS 
   - AC_PROJECT_PATH: AC_PROJECT_PATH
 - componentType: appcircle_android_build
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Android Build
   enabled: true
   onError: $exit
@@ -98,7 +98,7 @@ steps:
   - AC_APK_PATH: AC_APK_PATH
   - AC_AAB_PATH: AC_AAB_PATH
 - componentType: appcircle_android_sign
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Android Sign
   enabled: true
   onError: $exit
@@ -117,7 +117,7 @@ steps:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Android App Post-Processor
   enabled: true
   onError: $exit
@@ -127,7 +127,7 @@ steps:
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
 - componentType: appcircle_export_build_artifacts
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Export Build Artifacts
   alwaysRun: true
   enabled: true
