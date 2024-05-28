@@ -7,7 +7,7 @@ steps:
     stepName: Android Re-Sign
     webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
-    commit: 66c78fb
+    commit: 16c3c4a
     enabled: true
     onError: $exit
     alwaysRun: false
@@ -23,13 +23,13 @@ steps:
       - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
       - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
   - componentType: appcircle_export_build_artifacts
-    componentVersion: 1.0.*
+    componentVersion: "1.0.*"
     stepName: Export Build Artifacts
     alwaysRun: true
     enabled: true
     onError: $exit
-    webUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts'
-    repoUrl: 'https://github.com/appcircleio/appcircle-export-build-artifacts.git'
+    webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
+    repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
     commit: eb322a3
     inputs:
       - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
