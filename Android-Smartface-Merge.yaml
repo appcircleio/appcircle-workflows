@@ -42,7 +42,7 @@ steps:
   inputs:
   - AC_SELECTED_NODE_VERSION: lts
 - componentType: appcircle_android_build_version_increment
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Increment Build and Version Number
   enabled: true
   onError: $exit
