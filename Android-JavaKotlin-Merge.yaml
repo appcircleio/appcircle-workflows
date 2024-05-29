@@ -39,8 +39,8 @@ steps:
   stepName: Custom Script
   enabled: true
   onError: $exit
-  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
-  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component-component.git
   commit: ed1b419
   inputs:
   - Execute: "ruby"
