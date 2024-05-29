@@ -39,8 +39,8 @@ steps:
   stepName: Custom Script
   enabled: true
   onError: $exit
-  webUrl: https://github.com/appcircleio/appcircle-custom-script
-  repoUrl: https://github.com/appcircleio/appcircle-custom-script.git
+  webUrl: https://github.com/appcircleio/appcircle-custom-script-component
+  repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
   commit: ed1b419
   inputs:
   - Execute: "ruby"
@@ -104,7 +104,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: 0855c87
+  commit: b767c18
   inputs:
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
