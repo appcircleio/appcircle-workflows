@@ -74,7 +74,7 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-node-install-component.git
   commit: d65ba5b
   inputs:
-  - AC_SELECTED_NODE_VERSION: "$AC_SELECTED_NODE_VERSION"
+  - AC_SELECTED_NODE_VERSION: lts
 - componentType: appcircle_npm_yarn
   componentVersion: 1.0.*
   stepName: npm/Yarn Commands
@@ -116,7 +116,7 @@ steps:
   stepName: Increment Build and Version Number
   webUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment'
   repoUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment.git'
-  commit: 4707781
+  commit: a14f5dd
   enabled: true
   onError: $exit
   alwaysRun: false
@@ -138,7 +138,7 @@ steps:
     - AC_IOS_CONFIGURATION_NAME: $AC_IOS_CONFIGURATION_NAME
   outputs:
     - AC_IOS_NEW_BUILD_NUMBER: AC_IOS_NEW_BUILD_NUMBER
-    - AC_IOS_NEW_VERSION_NUMBER: AC_IOS_NEW_VERSION_NUMBER  
+    - AC_IOS_NEW_VERSION_NUMBER: AC_IOS_NEW_VERSION_NUMBER
 - componentType: appcircle_ios_build_sign
   componentVersion: 1.1.*
   stepName: Xcodebuild for Devices
@@ -146,7 +146,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-build-sign-component.git
-  commit: 8818fd1
+  commit: d147c7a
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_OUTPUT_DIR_PATH: $AC_OUTPUT_DIR
@@ -156,6 +156,7 @@ steps:
   - AC_CERTIFICATES: $AC_CERTIFICATES
   - AC_BUNDLE_IDENTIFIERS: $AC_BUNDLE_IDENTIFIERS
   - AC_PROVISIONING_PROFILES: $AC_PROVISIONING_PROFILES
+  - AC_CONFIGURATION_NAME: ""
   - AC_COMPILER_INDEX_STORE_ENABLE: "NO"
   - AC_METHOD_FOR_EXPORT: "auto-detect"
   - AC_TEAMID_FOR_EXPORT: ""
