@@ -4,65 +4,68 @@ directories:
 - AC_SOURCE
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Activate SSH Private Key
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 3f323d7
+  commit: 6f58522
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Git Clone
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6343567
+  commit: aa07fc1
   inputs:
-  - AC_GIT_URL: "$AC_GIT_URL"
-  - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
-  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
-  - AC_GIT_CACHE_CREDENTIALS: "true"
+  - AC_GIT_URL: $AC_GIT_URL
+  - AC_GIT_COMMIT: $AC_GIT_COMMIT
+  - AC_GIT_BRANCH: $AC_GIT_BRANCH
+  - AC_GIT_TAG: ''
+  - AC_GIT_LFS: 'false'
+  - AC_GIT_SUBMODULE: ''
+  - AC_GIT_CACHE_CREDENTIALS: 'true'
+  - AC_GIT_EXTRA_PARAMS: $AC_GIT_EXTRA_PARAMS
   outputs:
-  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+  - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_custom_script
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Custom Script
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-custom-script-component
   repoUrl: https://github.com/appcircleio/appcircle-custom-script-component.git
-  commit: cbea20f
+  commit: ed1b419
   inputs:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
 - componentType: appcircle_flutter_install
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Flutter Install
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-flutter-install-component
   repoUrl: https://github.com/appcircleio/appcircle-flutter-install-component.git
-  commit: 07d9e56
+  commit: 37852d6
   inputs:
   - AC_SELECTED_FLUTTER_VERSION: ""
   outputs:
   - PATH: PATH
-- componentType: appcircle_android_build_version_increment
+- componentType: appcircle_android_flutter_build_version_increment
   componentVersion: 1.0.*
   stepName: Increment Build and Version Number
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-build-version-increment-component
   repoUrl: https://github.com/appcircleio/appcircle-android-build-version-increment-component.git
-  commit: 9ec1626
+  commit: f63fb7b
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   - AC_PROJECT_PATH: $AC_PROJECT_PATH
@@ -76,33 +79,33 @@ steps:
   - AC_OMIT_ZERO_PATCH_VERSION: $AC_OMIT_ZERO_PATCH_VERSION
   - AC_VERSION_FLAVOR: $AC_VERSION_FLAVOR
   outputs:
-  - AC_ANDROID_NEW_VERSION_CODE: ''
-  - AC_ANDROID_NEW_VERSION_NAME: ''
+  - AC_ANDROID_NEW_VERSION_CODE: AC_ANDROID_NEW_VERSION_CODE
+  - AC_ANDROID_NEW_VERSION_NAME: AC_ANDROID_NEW_VERSION_NAME
 - componentType: appcircle_android_flutter_build
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Flutter Build for Android
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component
   repoUrl: https://github.com/appcircleio/appcircle-android-flutter-build-component.git
-  commit: ff1f6a2
+  commit: 09b7012
   inputs:
   - AC_FLUTTER_PROJECT_DIR: $AC_REPOSITORY_DIR
-  - AC_FLUTTER_BUILD_MODE: $AC_FLUTTER_BUILD_MODE 
+  - AC_FLUTTER_BUILD_MODE: $AC_FLUTTER_BUILD_MODE
   - AC_FLUTTER_BUILD_EXTRA_ARGS: $AC_FLUTTER_BUILD_EXTRA_ARGS
   - AC_OUTPUT_TYPE: $AC_OUTPUT_TYPE
   outputs:
   - AC_APK_PATH: AC_APK_PATH
   - AC_AAB_PATH: AC_AAB_PATH
-- componentType: appcircle_android_sign
-  componentVersion: "1.0.*"
+- componentType: appcircle_android_flutter_sign
+  componentVersion: 1.0.*
   stepName: Android Sign
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-sign-component
   repoUrl: https://github.com/appcircleio/appcircle-android-sign-component.git
-  commit: a3d10d4
-  inputs:  
+  commit: b767c18
+  inputs:
   - AC_APK_PATH: $AC_APK_PATH
   - AC_AAB_PATH: $AC_AAB_PATH
   - AC_ANDROID_KEYSTORE_PATH: $AC_ANDROID_KEYSTORE_PATH
@@ -114,23 +117,23 @@ steps:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
 - componentType: appcircle_android_post_process
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Android App Post-Processor
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-android-post-process-component
   repoUrl: https://github.com/appcircleio/appcircle-android-post-process-component.git
-  commit: d8365d3
+  commit: 9498afa
   outputs:
   - AC_ANDROID_POST_PROCESS_OUTPUT_PATH: AC_ANDROID_POST_PROCESS_OUTPUT_PATH
 - componentType: appcircle_export_build_artifacts
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Export Build Artifacts
   alwaysRun: true
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
   repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
-  commit: eb322a3
+  commit: f8aa050
   inputs:
   - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
