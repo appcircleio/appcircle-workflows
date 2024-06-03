@@ -22,11 +22,14 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
   commit: aa07fc1
   inputs:
-  - AC_GIT_URL: "$AC_GIT_URL"
-  - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
-  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
-  - AC_GIT_CACHE_CREDENTIALS: "true"
+  - AC_GIT_URL: $AC_GIT_URL
+  - AC_GIT_COMMIT: $AC_GIT_COMMIT
+  - AC_GIT_BRANCH: $AC_GIT_BRANCH
+  - AC_GIT_TAG: ''
+  - AC_GIT_LFS: 'false'
+  - AC_GIT_SUBMODULE: ''
+  - AC_GIT_CACHE_CREDENTIALS: 'true'
+  - AC_GIT_EXTRA_PARAMS: $AC_GIT_EXTRA_PARAMS
   outputs:
   - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_metadata_android
@@ -47,6 +50,6 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
   repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
-  commit: eb322a3
+  commit: f8aa050
   inputs:
   - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
