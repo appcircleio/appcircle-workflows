@@ -24,11 +24,6 @@ steps:
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
   commit: aa07fc1
   inputs:
-  - AC_GIT_URL: "$AC_GIT_URL"
-  - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
-  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
-  - AC_GIT_CACHE_CREDENTIALS: "true"
   - AC_GIT_URL: $AC_GIT_URL
   - AC_GIT_COMMIT: $AC_GIT_COMMIT
   - AC_GIT_BRANCH: $AC_GIT_BRANCH
@@ -43,7 +38,7 @@ steps:
   stepName: iOS Metadata
   webUrl: https://github.com/appcircleio/appcircle-ios-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-ios-metadata-component.git
-  commit: 7cad49d0e815938030e45a16a54c54f2dd0b23d0
+  commit: 7cad49d
   inputs:
   - AC_REPOSITORY_DIR: $AC_REPOSITORY_DIR
   outputs:
