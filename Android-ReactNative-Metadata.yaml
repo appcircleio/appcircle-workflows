@@ -4,33 +4,36 @@ directories:
 - AC_OUTPUT_DIR
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Activate SSH Private Key
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component
   repoUrl: https://github.com/appcircleio/appcircle-activate-ssh-key-component.git
-  commit: 3f323d7
+  commit: 6f58522
   inputs:
   - AC_REPOSITORY_SSH_KEY: $AC_REPOSITORY_SSH_KEY
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: "1.0.*"
-  stepName: Git
+  componentVersion: 1.0.*
+  stepName: Git Clone
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: 6343567
+  commit: aa07fc1
   inputs:
-  - AC_GIT_URL: "$AC_GIT_URL"
-  - AC_GIT_LFS: "false"
-  - AC_GIT_BRANCH: "$AC_GIT_BRANCH"
-  - AC_GIT_COMMIT: "$AC_GIT_COMMIT"
-  - AC_GIT_CACHE_CREDENTIALS: "true"
+  - AC_GIT_URL: $AC_GIT_URL
+  - AC_GIT_COMMIT: $AC_GIT_COMMIT
+  - AC_GIT_BRANCH: $AC_GIT_BRANCH
+  - AC_GIT_TAG: ''
+  - AC_GIT_LFS: 'false'
+  - AC_GIT_SUBMODULE: ''
+  - AC_GIT_CACHE_CREDENTIALS: 'true'
+  - AC_GIT_EXTRA_PARAMS: $AC_GIT_EXTRA_PARAMS
   outputs:
-  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+  - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_metadata_android
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Metadata
   webUrl: https://github.com/appcircleio/appcircle-android-metadata-component
   repoUrl: https://github.com/appcircleio/appcircle-android-metadata-component.git
@@ -40,13 +43,13 @@ steps:
   outputs:
   - AC_METADATA_OUTPUT_PATH: AC_OUTPUT_DIR
 - componentType: appcircle_export_build_artifacts
-  componentVersion: "1.0.*"
+  componentVersion: 1.0.*
   stepName: Export Build Artifacts
   alwaysRun: true
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-export-build-artifacts
   repoUrl: https://github.com/appcircleio/appcircle-export-build-artifacts.git
-  commit: eb322a3
+  commit: f8aa050
   inputs:
   - AC_UPLOAD_DIR: $AC_OUTPUT_DIR
