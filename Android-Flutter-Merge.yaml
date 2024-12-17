@@ -46,6 +46,16 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
+- componentType: appcircle_select_java_version
+  componentVersion: 1.0.*
+  stepName: Select Java Version
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-select-java-version-component
+  repoUrl: https://github.com/appcircleio/appcircle-select-java-version-component.git
+  commit: 0c841de
+  inputs:
+  - AC_SELECTED_JAVA_VERSION: "17"
 - componentType: appcircle_flutter_install
   componentVersion: 1.0.*
   stepName: Flutter Install
