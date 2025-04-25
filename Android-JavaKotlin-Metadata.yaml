@@ -31,7 +31,7 @@ steps:
   - AC_GIT_CACHE_CREDENTIALS: 'true'
   - AC_GIT_EXTRA_PARAMS: $AC_GIT_EXTRA_PARAMS
   outputs:
-  - AC_REPOSITORY_DIR: "AC_REPOSITORY_DIR"
+  - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_metadata_android
   componentVersion: 1.0.*
   stepName: Metadata

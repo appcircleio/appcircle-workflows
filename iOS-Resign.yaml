@@ -24,7 +24,7 @@ steps:
     stepName: Resign IPA
     webUrl: 'https://github.com/appcircleio/appcircle-ios-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-ios-resign-component.git'
-    commit: 51183ed
+    commit: a1353d6
     enabled: true
     onError: $exit
     alwaysRun: false
