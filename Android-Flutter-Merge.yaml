@@ -133,7 +133,7 @@ steps:
   onError: $next
   webUrl: https://github.com/appcircleio/appcircle-release-notes-component
   repoUrl: https://github.com/appcircleio/appcircle-release-notes-component.git
-  commit: 08f5310
+  commit: fe0b0a4
   inputs:
   - AC_RELEASE_NOTES_PATH: $AC_RELEASE_NOTES_PATH
   - AC_RELEASE_NOTES_TEMPLATE: |
