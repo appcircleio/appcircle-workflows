@@ -46,6 +46,16 @@ steps:
   - Execute: "ruby"
   - Script: |
       puts "___ Hello world! ___"
+- componentType: appcircle_select_java_version
+  componentVersion: 1.0.*
+  stepName: Select Java Version
+  enabled: true
+  onError: $exit
+  webUrl: https://github.com/appcircleio/appcircle-select-java-version-component
+  repoUrl: https://github.com/appcircleio/appcircle-select-java-version-component.git
+  commit: 0c841de
+  inputs:
+  - AC_SELECTED_JAVA_VERSION: "17"
 - componentType: appcircle_node_install
   componentVersion: 1.0.*
   stepName: Install Node
@@ -127,6 +137,26 @@ steps:
   outputs:
   - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
   - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
+- componentType: appcircle_release_notes
+  componentVersion: 1.0.*
+  stepName: Publish Release Notes
+  enabled: true
+  onError: $next
+  webUrl: https://github.com/appcircleio/appcircle-release-notes-component
+  repoUrl: https://github.com/appcircleio/appcircle-release-notes-component.git
+  commit: fe0b0a4
+  inputs:
+  - AC_RELEASE_NOTES_PATH: $AC_RELEASE_NOTES_PATH
+  - AC_RELEASE_NOTES_TEMPLATE: |
+      <%# Please check our documentation for more examples by clicking the help button at the top. %>
+      Branch: $AC_GIT_BRANCH
+      Commit Hash: <%= ENV['AC_GIT_COMMIT'][0..6] %>
+      Commit Message: $AC_COMMIT_MESSAGE
+      Trigger Type: $AC_TRIGGER_REASON
+      Trigger User: $AC_INTERNAL_TRIGGER_USER
+      Git Tag: $AC_COMMIT_TAGS
+      Build Configuration: $AC_INTERNAL_CONFIGURATION_NAME
+      Build Workflow: $AC_WORKFLOW_NAME
 - componentType: appcircle_android_post_process
   componentVersion: 1.0.*
   stepName: Android App Post-Processor
