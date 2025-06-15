@@ -22,7 +22,7 @@ steps:
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: d7597b0
+  commit: 8eadca5
   inputs:
   - AC_GIT_URL: $AC_GIT_URL
   - AC_GIT_COMMIT: $AC_GIT_COMMIT
