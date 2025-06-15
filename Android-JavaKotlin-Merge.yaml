@@ -16,7 +16,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: 1.0.*
+  componentVersion: 1.1.*
   stepName: Git Clone
   enabled: true
   onError: $exit
