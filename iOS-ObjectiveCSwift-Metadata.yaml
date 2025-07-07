@@ -16,13 +16,13 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: 1.0.*
+  componentVersion: 1.1.*
   stepName: Git Clone
   enabled: true
   onError: $exit
   webUrl: https://github.com/appcircleio/appcircle-git-clone-component
   repoUrl: https://github.com/appcircleio/appcircle-git-clone-component.git
-  commit: aa07fc1
+  commit: 2f9d1f5
   inputs:
   - AC_GIT_URL: $AC_GIT_URL
   - AC_GIT_COMMIT: $AC_GIT_COMMIT
