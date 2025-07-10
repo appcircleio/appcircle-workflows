@@ -29,7 +29,7 @@ steps:
     onError: $exit
     alwaysRun: false
     inputs:
-      - AC_RESIGN_IPA_URL: $ResignFileUrl
+      - AC_RESIGN_FILE_URL: $ResignFileUrl
       - AC_RESIGN_FILENAME: $ResignFileName
       - AC_RESIGN_TARGETS: $Targets
       - AC_APP_IDENTIFIERS: $AC_APP_IDENTIFIERS
