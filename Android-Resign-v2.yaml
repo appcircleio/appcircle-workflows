@@ -3,11 +3,11 @@ directories:
   - AC_OUTPUT_DIR
 steps:
   - componentType: appcircle_android_resign
-    componentVersion: 1.0.*
-    stepName: Android Re-Sign
+    componentVersion: 1.1.*
+    stepName: Android Re-Sign v2 (auto-sign)
     webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
-    commit: 66c78fb
+    commit: 8012bb4
     enabled: true
     onError: $exit
     alwaysRun: false
@@ -19,31 +19,12 @@ steps:
       - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
       - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
       - AC_ANDROID_ALIAS_PASSWORD: $AC_ANDROID_ALIAS_PASSWORD
+      - AC_CONVERT_AAB_TO_APK: false
+      - AC_BUNDLETOOL_VERSION: latest
     outputs:
       - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
       - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
-  
-  - componentType: appcircle_bundletool
-    componentVersion: 1.0.*
-    stepName: Android Bundle Tool
-    webUrl: 'https://github.com/appcircleio/appcircle-bundletool-component'
-    repoUrl: 'https://github.com/appcircleio/appcircle-bundletool-component.git'
-    commit: 6c59bdd
-    enabled: $AC_ANDROID_CONVERT
-    onError: $exit
-    alwaysRun: false
-    inputs:
-      - AC_BUNDLETOOL_VERSION: $AC_BUNDLETOOL_VERSION
-      - AC_SIGNED_AAB_PATH: $AC_SIGNED_AAB_PATH
-      - AC_RESIGN_TARGETS: $Targets
-      - AC_ANDROID_KEYSTORE_PATH: $AC_ANDROID_KEYSTORE_PATH
-      - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
-      - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
-      - AC_ANDROID_ALIAS_PASSWORD: $AC_ANDROID_ALIAS_PASSWORD
-    outputs:
-      - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
-      - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
-  
+   
   - componentType: appcircle_export_build_artifacts
     componentVersion: 1.0.*
     stepName: Export Build Artifacts
