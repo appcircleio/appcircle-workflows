@@ -19,12 +19,11 @@ steps:
       - AC_ANDROID_KEYSTORE_PASSWORD: $AC_ANDROID_KEYSTORE_PASSWORD
       - AC_ANDROID_ALIAS: $AC_ANDROID_ALIAS
       - AC_ANDROID_ALIAS_PASSWORD: $AC_ANDROID_ALIAS_PASSWORD
-      - AC_CONVERT_AAB_TO_APK: false
+      - AC_CONVERT_AAB_TO_APK: $AC_CONVERT_AAB_TO_APK
       - AC_BUNDLETOOL_VERSION: latest
     outputs:
       - AC_SIGNED_APK_PATH: AC_SIGNED_APK_PATH
       - AC_SIGNED_AAB_PATH: AC_SIGNED_AAB_PATH
-   
   - componentType: appcircle_export_build_artifacts
     componentVersion: 1.0.*
     stepName: Export Build Artifacts
