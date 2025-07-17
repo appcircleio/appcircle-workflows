@@ -5,8 +5,8 @@ steps:
   - componentType: appcircle_custom_script
     componentVersion: 1.0.*
     stepName: Custom Script
-    webUrl: 'https://github.com/appcircleio/appcircle-custom-script'
-    repoUrl: 'https://github.com/appcircleio/appcircle-custom-script.git'
+    webUrl: 'https://github.com/appcircleio/appcircle-custom-script-component'
+    repoUrl: 'https://github.com/appcircleio/appcircle-custom-script-component.git'
     commit: c163e15
     enabled: true
     onError: $exit
