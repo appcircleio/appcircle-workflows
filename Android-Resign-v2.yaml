@@ -7,7 +7,7 @@ steps:
     stepName: Android Re-Sign v2 (auto-sign)
     webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
-    commit: 8012bb4
+    commit: bed52df
     enabled: true
     onError: $exit
     alwaysRun: false
