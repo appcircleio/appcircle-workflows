@@ -20,11 +20,11 @@ steps:
       - AC_KEYCHAIN_PATH: AC_KEYCHAIN_PATH
       - AC_KEYCHAIN_PASSWORD: AC_KEYCHAIN_PASSWORD
   - componentType: appcircle_ios_autosign
-    componentVersion: 1.0.*
+    componentVersion: 1.1.*
     stepName: Resign v2 (autosign) IPA
     webUrl: 'https://github.com/appcircleio/appcircle-ios-autosign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-ios-autosign-component.git'
-    commit: 474caba
+    commit: aeeedc0
     enabled: true
     onError: $exit
     alwaysRun: false
