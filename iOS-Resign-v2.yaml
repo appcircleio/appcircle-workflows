@@ -9,7 +9,7 @@ steps:
       https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component
     repoUrl: >-
       https://github.com/appcircleio/appcircle-ios-install-certificates-and-profiles-component.git
-    commit: 9c03945
+    commit: 1788160
     enabled: true
     onError: $exit
     alwaysRun: false
