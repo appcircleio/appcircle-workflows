@@ -24,7 +24,7 @@ steps:
     stepName: Resign v2 (autosign) IPA
     webUrl: 'https://github.com/appcircleio/appcircle-ios-autosign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-ios-autosign-component.git'
-    commit: a6b1bf9
+    commit: 3a5f337
     enabled: true
     onError: $exit
     alwaysRun: false
