@@ -4,7 +4,7 @@ directories:
 - AC_OUTPUT_DIR
 steps:
 - componentType: appcircle_activate_ssh_key
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Activate SSH Private Key
   enabled: true
   onError: $exit
@@ -16,7 +16,7 @@ steps:
   outputs:
   - SSH_AUTH_SOCK: SSH_AUTH_SOCK
 - componentType: appcircle_git_clone
-  componentVersion: 1.1.*
+  componentVersion: Latest
   stepName: Git Clone
   enabled: true
   onError: $exit
@@ -35,7 +35,7 @@ steps:
   outputs:
   - AC_REPOSITORY_DIR: AC_REPOSITORY_DIR
 - componentType: appcircle_custom_script
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Custom Script
   enabled: true
   onError: $exit
@@ -47,7 +47,7 @@ steps:
   - Script: |
       puts "___ Hello world! ___"
 - componentType: appcircle_ios_install_certificates_and_profiles
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Install Certificates & Profiles
   enabled: true
   onError: $exit
@@ -61,7 +61,7 @@ steps:
   - AC_KEYCHAIN_PATH: AC_KEYCHAIN_PATH
   - AC_KEYCHAIN_PASSWORD: AC_KEYCHAIN_PASSWORD
 - componentType: appcircle_xcode_select
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Xcode Select
   enabled: true
   onError: $exit
@@ -74,7 +74,7 @@ steps:
   outputs:
   - XCODE_DEVELOPER_DIR_PATH: XCODE_DEVELOPER_DIR_PATH
 - componentType: appcircle_flutter_install
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Flutter Install
   enabled: true
   onError: $exit
@@ -86,7 +86,7 @@ steps:
   outputs:
   - PATH: "PATH"
 - componentType: appcircle_ios_flutter_build
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Flutter Build for iOS
   enabled: true
   onError: $exit
@@ -98,7 +98,7 @@ steps:
   - AC_FLUTTER_BUILD_MODE: "$AC_FLUTTER_BUILD_MODE"
   - AC_FLUTTER_BUILD_EXTRA_ARGS: "$AC_FLUTTER_BUILD_EXTRA_ARGS"
 - componentType: appcircle_ios_flutter_build_version_increment
-  componentVersion: 2.0.*
+  componentVersion: Latest
   stepName: Increment Build and Version Number
   webUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment'
   repoUrl: 'https://github.com/appcircleio/appcircle-ios-build-version-increment.git'
@@ -126,7 +126,7 @@ steps:
     - AC_IOS_NEW_BUILD_NUMBER: AC_IOS_NEW_BUILD_NUMBER
     - AC_IOS_NEW_VERSION_NUMBER: AC_IOS_NEW_VERSION_NUMBER
 - componentType: appcircle_ios_build_sign
-  componentVersion: 1.1.*
+  componentVersion: Latest
   stepName: Xcodebuild for Devices
   enabled: true
   onError: $exit
@@ -156,7 +156,7 @@ steps:
   - AC_ARCHIVE_METADATA_PATH: AC_ARCHIVE_METADATA_PATH
   - AC_EXPORT_DIR: AC_EXPORT_DIR
 - componentType: appcircle_ios_build_simulator
-  componentVersion: 1.3.*
+  componentVersion: Latest
   stepName: Xcodebuild for iOS Simulator
   enabled: false
   onError: $next
@@ -176,7 +176,7 @@ steps:
   outputs:
   - AC_SIMULATOR_APP_PATH: AC_SIMULATOR_APP_PATH
 - componentType: appcircle_release_notes
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Publish Release Notes
   enabled: true
   onError: $next
@@ -196,7 +196,7 @@ steps:
       Build Configuration: $AC_INTERNAL_CONFIGURATION_NAME
       Build Workflow: $AC_WORKFLOW_NAME
 - componentType: appcircle_export_build_artifacts
-  componentVersion: 1.0.*
+  componentVersion: Latest
   stepName: Export Build Artifacts
   alwaysRun: true
   enabled: true
