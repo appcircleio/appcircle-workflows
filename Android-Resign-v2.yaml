@@ -4,7 +4,7 @@ directories:
 steps:
   - componentType: appcircle_android_resign
     componentVersion: 1.1.*
-    stepName: Android Re-sign
+    stepName: Android Re-sign Binary
     webUrl: 'https://github.com/appcircleio/appcircle-android-resign-component'
     repoUrl: 'https://github.com/appcircleio/appcircle-android-resign-component.git'
     commit: bed52df
